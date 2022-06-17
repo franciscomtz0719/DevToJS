@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <!--Nav bar container start-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid justify-content-between">
+          <div class="navbar__left-side d-inline-flex">
+            <div class="navbar__left-section">
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <span
+                ><a href="#"
+                  ><img
+                    class="navbar__logo"
+                    src="../images/header-nav-bar/devto-logo.svg"
+                    alt="" /></a
+              ></span>
+            </div>
+            <form class="d-flex ms-3 border">
+              <input
+                class="form-control m-0 border-0 navbar__search-bar d-none d-lg-block"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <!-- tamaño de barra de busqueda -->
+              <button class="btn m-0 justify-content-sm-end" type="submit">
+                <img src="./images/header-nav-bar/search-icon.svg" alt="" />
+              </button>
+            </form>
+          </div>
+
+          <div class="navbar__right-side d-inline-flex align-items-center m-4">
+            <button class="navbar__button d-none d-lg-flex">Create Post</button>
+            <div class="d-inline-flex position-relative">
+              <span
+                class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"
+              ></span>
+              <img
+                class="rounded-4 shadow-4 navbar__notification-icon"
+                src="../images/header-nav-bar/notification-icon.svg"
+                alt="Avatar"
+              />
+            </div>
+            <a href=""
+              ><img
+                src="../images/discuss-view/user-profile-picture.webp"
+                class="rounded-circle navbar__profile-avatar"
+                alt="perfil"
+            /></a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!--Nav bar container end-->
+
+    <main>
+      <div
+        class="left-aside-discuss col-lg-1 flex-lg-column d-none d-lg-flex position-fixed ms-1"
+      >
+        <!--left aside start-->
+        <div class="left-aside__icon-container">
+          <img
+            src="../images/main/heart-icon.svg"
+            alt=""
+            type="button"
+            class="btn btn-secondary dropdown-toggle bg-light border-0 m-3"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          />
+        </div>
+        <div class="left-aside__icon-container">
+          <img
+            src="../images/main/unicorn-icon.svg"
+            alt=""
+            type="button"
+            class="btn btn-secondary dropdown-toggle bg-light border-0 m-3"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          />
+        </div>
+        <div class="left-aside__icon-container">
+          <img
+            src="../images/main/save-icon.svg"
+            alt=""
+            type="button"
+            class="btn btn-secondary dropdown-toggle bg-light border-0 m-3"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          />
+        </div>
+        <div class="left-aside__icon-container">
+          <div class="btn-group dropend">
+            <img
+              src="../images/main/more-3dots-icon.svg"
+              alt=""
+              type="button"
+              class="btn btn-secondary dropdown-toggle bg-light border-0 m-3"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            />
+            <ul class="dropdown-menu d-flex-column">
+              <button class="d-flex justify-content-between w-100">
+                <li>Copy link</li>
+                <img src="../images/main/copylink-icon.svg" alt="" />
+              </button>
+              <button>Share to twitter</button>
+              <button>Share to Linkedin</button>
+              <button>Share to Reddit</button>
+              <button>Share to Hacker News</button>
+              <button>Share to Facebook</button>
+              <button>Share Post via</button>
+              <button>Report Abuse</button>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--left aside end-->
+
+      <!--main starts-->
+      <div class="container position-relative">
+        <div class="row ms-1">
+          <div class="main col-12 col-lg-8">
+            <!-- Card containder user detailed user post start -->
+            <div class="card card-body d-flex-column">
+              
+              <section class="container">
+                <div class="row">
+                  <div class="col-12 col-lg-12">
+                    <div class="card__profile-container d-flex-column m-3">
+                        <div class="card__username-container d-flex">
+                            <img
+                            src="/images/discuss-view/lifeascoder-profile.webp"
+                            alt="image user profile"
+                            height="50px"
+                            style="border-radius: 360px"
+                          />
+                          <div class="card__username-container">
+                            <h6 class="card__profile-name m-0">lifeascoder</h6>
+                            <p class="card__date m-0">May 1</p>
+                          </div>
+                        </div>
+
+                      <h3 class="card__tittle card__post-tittle">
+                        Can't connect Bluetooth neckband in Ubuntu 22.04
+                      </h3>
+                      <button class="card__tags m-2">#Discuss</button
+                      ><button class="card__tags m-2">#help</button
+                      ><button class="card__tags m-2">#ubuntu</button
+                      ><button class="card__tags m-2">#linux</button>
+                      <p class="card__post-body">
+                        I've been using the Neckband ZEB Evolve - A wireless
+                        Neckband earphone by Zebronics. I've bought it through
+                        Amazon. It worked fine with my Phone and my Windows
+                        operating system. But when it comes to Linux, It didn't
+                        connect. I tried many times but I failed. I am using
+                        Ubuntu 22.04. I can't come up with a solution. I am
+                        stuck spending ₹829 ( 10.83 United States Dollar ) on a
+                        Neckband and.. Well I am trapped!
+                      </p>
+                      <p>
+                        <em
+                          >Please help me if you know how to solve this issue, I
+                          beg your pardon crying</em
+                        >
+                      </p>
+
+                      <div class="card__footer py-3 border-0">
+                        <div class="w-100">
+                          <div class="d-flex flex-start w-100">
+                            <img class="rounded-circle shadow-1-strong me-3"
+                              src="../images/discuss-view/user-profile-picture.webp" alt="avatar" width="40"
+                              height="40" />
+                            <div class="form-outline w-100">
+                              <textarea class="form-control" id="textAreaExample" rows="4"
+                                style="background: #fff;">Add to the discussion</textarea>
+                            
+                                <div class="form-outline__upload-template-button">
+                                    <div class="form-outline__upload-template-button d-inline-flex">
+                                      <button
+                                        type="button"
+                                        class="btn btn-primary btn-sm card__btn-aux"
+                                      >
+                                        <img
+                                          src="../images/discuss-view/upload-picture.svg"
+                                          alt=""
+                                        />
+                                        
+                                        Upload image
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-outline-primary btn-sm card__btn-aux"
+                                      >
+                                        <img
+                                          src="../images/discuss-view/response-template.svg"
+                                          alt=""
+                                        />
+                                        Templates
+                                      </button>
+                                    </div>
+                                    <img
+                                      src="../images/discuss-view/markdown-guide-icon.svg"
+                                      alt=""
+                                      type="button"
+                                      class="btn btn-secondary dropdown-toggle bg-light border-0"
+                                      data-bs-toggle="dropdown"
+                                      aria-expanded="false"
+                                    />
+                                  </div>    
+                            
+                            </div>
+                          </div>
+
+                        </div>
+                        <div class="d-flex mt-2 pt-1 ms-5 ps-2">
+                          <button type="button" class="btn btn-primary btn-sm card__btn-submit">
+                            Submit
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-outline-primary btn-sm"
+                          >
+                            Preview
+                          </button>
+                        </div>
+                        <div
+                          class="card__footer-conduct d-flex justify-content-center"
+                        >
+                          <a href="">Code of Conduct </a><span>·</span
+                          ><a href=""> Report abuse</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <!-- detailed card end -->
+
+            <div class="card">
+                <div class="card-header">
+                  Read next
+                </div>
+                <div class="card-body">
+                    <div class="card__username-container d-flex my-3">
+                        <img
+                        src="/images/discuss-view/Ben-halpern-profile.webp"
+                        alt="image user profile"
+                        height="50px"
+                        style="border-radius: 360px"
+                      />
+                      <div class="card__username-container ms-3">
+                          <a href="">
+                            <h6 class="card__profile-name m-0">Describe the wors job interview you've ever taken part in</h6>
+                            <p class="card__date m-0">Ben Halpen - Apr 28</p>
+                          </a>
+                      </div>
+                    </div>
+                    <div class="card__username-container d-flex my-3">
+                        <img
+                        src="/images/discuss-view/shahed-nasser-profile.webp"
+                        alt="image user profile"
+                        height="50px"
+                        style="border-radius: 360px"
+                      />
+                      <div class="card__username-container ms-3">
+                        <a href="">
+                            <h6 class="card__profile-name m-0">What's the most recent project you've been working on?</h6>
+                            <p class="card__date m-0">Shahed Nasser - Apr 25</p>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="card__username-container d-flex my-3">
+                        <img
+                        src="/images/discuss-view/tina-huynh-profile.webp"
+                        alt="image user profile"
+                        height="50px"
+                        style="border-radius: 360px"
+                      />
+                      <div class="card__username-container ms-3">
+                          <a href="">
+                            <h6 class="card__profile-name m-0">What does your dream work setup looks like</h6>
+                            <p class="card__date m-0">Tina Huynh - Apr 28</p>
+                          </a>
+
+                      </div>
+                    </div>
+                    <div class="card__username-container d-flex my-3">
+                        <img
+                        src="/images/discuss-view/joelbonet-profile.webp"
+                        alt="image user profile"
+                        height="50px"
+                        style="border-radius: 360px"
+                      />
+                      <div class="card__username-container ms-3">
+                          <a href="">
+                            <h6 class="card__profile-name m-0">to TS or not to TS, ths is NOT the question. is it?</h6>
+                            <p class="card__date m-0">JoelBonetR - Apr 26</p>
+                          </a>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+
+          </div>
+          <!--main ends-->
+
+          <div class="right-aside col-sm-12 col-lg-4">
+            <!--right aside aside start-->
+
+            <div class="card card-aside1">
+              <div class="card__portrait-container bg-dark">
+                <p>Desarrollado con presión</p>
+              </div>
+
+              <div class="card__profile-container d-flex align-items-end m-0">
+                <img
+                  src="/images/discuss-view/lifeascoder-profile.webp"
+                  alt="image user profile"
+                  height="50px"
+                  style="border-radius: 360px"
+                />
+                <div class="card__username-container m-0">
+                  <h6 class="card__profile-name m-0">lifeascoder</h6>
+                </div>
+              </div>
+              <div
+                class="card__button-container m-3 d-flex justify-content-center"
+              >
+                <button type="button" class="btn btn-primary btn-sm w-100 m-1">
+                  Follow
+                </button>
+              </div>
+              <div class="card-body">
+                <p>
+                  I am working on Portfolio websites and learning to make
+                  stunning websites also.
+                </p>
+
+                <div class="card__text-subdivition">
+                  <p class="card__bold-text m-0">LOCATION</p>
+                  <p class="card__regular-text">Kerala, India</p>
+                </div>
+                <div class="card__text-subdivition">
+                  <p class="card__bold-text m-0">EDUCATION</p>
+                  <p class="card__regular-text">Amrita Vidyalayam, Ottapalam</p>
+                </div>
+                <div class="card__text-subdivition">
+                  <p class="card__bold-text m-0">JOINED</p>
+                  <p class="card__regular-text">Jan 27, 2022</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card card-aside2">
+              <img
+                src="./images/collapsible-menu/rightaside2.webp"
+                class="card-img-top"
+                alt=""
+              />
+              <div class="card-body">
+                <h4 class="card-title">Appwrite Hackathon (39)</h4>
+                <a href="">Watery: A water delivery Database</a>
+                <a href="">Import Csv to Appwrite Database</a>
+                <a href="">Day 3: Still UI/bottom navigation bar (custom)</a>
+                <a href="">News Archiver</a>
+                <div class="d-flex-column justify-content-center">
+                  <a href="#" class="btn btn-primary my-1 w-100"
+                    >Submit Your Project!</a
+                  >
+                  <a href="#" class="btn btn-primary my-3 w-100"
+                    >See all posts</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--right aside end-->
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
