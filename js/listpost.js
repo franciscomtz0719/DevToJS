@@ -12,17 +12,11 @@ fetch("https://devto-9a074-default-rtdb.firebaseio.com/post/.json")
     // console.log(posts)
     let template =""
     for(onePost in posts){
-        let {author,
-            avatarAuthor,
-            content,
-            createdDate,
-            minToRead,
-            tags,
-            title,
-            urlCoverImage} = posts[onePost]
+        let {author, avatarAuthor, content, createdDate, minToRead, tags, title, urlCoverImage} = posts[onePost]
         
 
-        template += `<!--First card-->
+        template += `
+        <!--Start card-->
         <div class="card">
             <div class="card-header">
                 <div class="dev-aside__card-header">
@@ -41,7 +35,7 @@ fetch("https://devto-9a074-default-rtdb.firebaseio.com/post/.json")
                 </div>
             </div>
             <div class="card-body">
-                <a class="d-flex flex-grow-1 ms-5" href="post.html">
+                <a class="d-flex flex-grow-1 ms-5" href="post.html?id${onePost}">
                     <h2>${title}</h2>
                 </a>
                 <div class="card-body__tags d-flex flex-grow-1 ms-4">
