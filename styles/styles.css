@@ -220,6 +220,13 @@
   border-radius: 1rem;
 }
 
+textarea.form-control {
+  -webkit-appearance: initial;
+  -moz-appearance: initial;
+  appearance:initial;
+}
+
+
 .left-aside-discuss .btn-group button {
   width: 12rem;
   text-align: start;
