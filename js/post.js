@@ -28,16 +28,18 @@ fetch(`https://devto-9a074-default-rtdb.firebaseio.com/post/${idpost}.json`)
             </div>
             `       
         document.querySelector(".dev-main__header-post").innerHTML = templateHeader
+
         templateBody = ""      
         templateBody =  `
         <div class="container" >
         <h1>${title}</h1>
         <ul class="nav nav-pills">
             
-            <li><a href="#" class="btn btn-sm  dev-link__on--green"><span>#</span> programming</a></li>
-            <li><a href="#" class="btn btn-sm  dev-link__on--orange"><span>#</span> beginners</a></li>
-            <li><a href="#" class="btn btn-sm  dev-link__on--cyan"><span>#</span> career</a></li>
-            <li><a href="#" class="btn btn-sm  dev-link__on--purple"><span>#</span> webdev</a></li>
+            <li><a href="#" class="btn btn-sm  dev-link__on--green"><span>#</span>${tags}</a></li>
+            <li><a href="#" class="btn btn-sm  dev-link__on--green"><span>#</span>${tags}</a></li>
+            <li><a href="#" class="btn btn-sm  dev-link__on--green"><span>#</span>${tags}</a></li>
+            <li><a href="#" class="btn btn-sm  dev-link__on--green"><span>#</span>${tags}</a></li>
+     
         </ul>
         <div><p> ${content}<p></div>
         
