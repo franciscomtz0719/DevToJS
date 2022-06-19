@@ -44,15 +44,94 @@ if (!response){
         avatarAuthor
     } = response  
 
-    document.getElementById(/**title*/).value = title
-    document.getElementById(/**content*/).value = content
-    document.getElementById(/**tags*/).value = tags
-    document.getElementById(/**urlCoverImage*/).value = urlCoverImage
-    document.getElementById(/**author*/).value = author
-    document.getElementById(/**createDate*/).value = createdDate
-    document.getElementById(/**minToRead*/).value = minToRead
-    document.getElementById(/**avatarAuthor*/).value = avatarAuthor 
+    document.getElementById('form__update-title').value = title
+    document.getElementById('form__update-content').value = content
+    document.getElementById('form__update-tags').value = tags
+    document.getElementById('form__update-urlCoverImage').value = urlCoverImage
+    document.getElementById('form__update-author').value = author
+    document.getElementById('form__update-mintoRead').value = minToRead
+    document.getElementById('form__update-avatar-author').value = avatarAuthor 
 
+    }
+}).catch(err => {
+    alert(err.message)
+})
 
-}
+let btnUpdate = document.getElementById('updatePost')
+btnUpdate.addEventListener('click', () => {
+
+    let today = new Date();
+    let createdDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()   
+
+    title = document.getElementById('form__update-title').value
+    content = document.getElementById('form__update-content').value
+    tags = document.getElementById('form__update-tags').value 
+    urlCoverImage = document.getElementById('form__update-urlCoverImage').value 
+    author = document.getElementById('form__update-author').value 
+    minToRead = document.getElementById('form__update-mintoRead').value 
+    avatarAuthor = document.getElementById('form__update-avatar-author').value  
+
+    if(
+        title === '' ||
+        content === '' ||
+        tags === '' ||
+        urlCoverImage === '' ||
+        author === '' ||
+        minToRead === ''||
+        avatarAuthor === ''
+    ){
+        alert('It looks you left some empty spaces')
+    } else {
+        let updatedPost = {
+            title: title,
+            content: content,
+            tags: tags,
+            urlCoverImage: urlCoverImage,
+            author: author,
+            createdDate: createdDate,
+            minToRead: minToRead,
+            avatarAuthor: avatarAuthor 
+        }
+
+        fetch(`https://devto-9a074-default-rtdb.firebaseio.com/post/${idPost}.json`,{
+            method: 'PATCH',
+            body: JSON.stringify(updatedPost),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        })
+        .then((response) => {
+            return response.json()
+        }) 
+        .then((response) => {
+            alert(`El post ${response.title} con el id ${idPost} ha sido actualizado`)
+        }).catch((error) => {
+            alert(`No fue posible actualiziar el post ${error}`)
+        })
+    }
+})
+git 
+let btnDelete = document.getElementById('deletePost')
+btnDelete.addEventListener('click', () => {
+
+    fetch(`https://devto-9a074-default-rtdb.firebaseio.com/post/${idPost}.json`, {
+        method: 'DELETE'
+    })
+    .then (response => {       
+      // comprobamos que el estatus de la respuesta es falso
+    if (!response.ok) {
+        // si si, lanzamos un error con un mensaje
+        let err = new Error(`Algo salio mal, status: ${response.status} ${response.statusText} type: ${response.type}`)
+        throw err
+    } else {
+        // sino, retornamos la respuesta al siguiente then
+        return response.json()
+    }
+    })
+    .then((response) => {
+        console.log(response) 
+        winndow.location.pathname = '/index.html'
+    }).catch( err => {
+        console.log(err)
+    })
 })
