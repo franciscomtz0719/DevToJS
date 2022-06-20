@@ -1,68 +1,126 @@
 fetch("https://devto-9a074-default-rtdb.firebaseio.com/post/.json")
 .then(response => {
     // convierte la respuesta a JSON
-    // console.log(response)
+    console.log(response)
     if(!response.ok){
       throw new Error(`Algo salio mal, status: ${response.status}${response.statusText}${response.type}`)
-    } else {
-    return response.json()
+   } else {
+      return response.json()
   }
 })
 .then((posts)=> {
-    // console.log(posts)
-    let template =""
-    for(onePost in posts){
-        let {author, avatarAuthor, content, createdDate, minToRead, tags, title, urlCoverImage} = posts[onePost]
-        template += `
-        <!--Start card-->
-        <div class="card">
-            <div class="card-header">
-                <div class="dev-aside__card-header">
-                    <img src="${urlCoverImage}">
-                </div>
+   
+   arrPost = Object.entries(posts).reverse()
+   console.log(arrPost)
+   objPost = Object.fromEntries(arrPost)
+   console.log(objPost)
 
-                <div class="card-header__info d-flex">
-                    <div class="card-header__image-user flex-shrink-0">
-                        <img src="${avatarAuthor}">
-                    </div>
-                    <!--Aqui el over despliega ventanita-->
-                    <div class="card-header__text flex-grow-1 ms-3">
-                        <a href="#">${author}</a>
-                        <p>${createdDate}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card-body">
-                <a class="d-flex flex-grow-1 ms-5" href="post.html?id${onePost}">
-                    <h2>${title}</h2>
-                </a>
-                <div class="card-body__tags d-flex flex-grow-1 ms-4">
+   let template =""
+   let contador = 0
+   for(onePost in objPost){
 
-                    <ul class="nav nav-pills">
+         console.log(onePost)
+      let {author, avatarAuthor, content, createdDate, minToRead, tags, title, urlCoverImage} = posts[onePost]
+         contador += 1
+         console.log(contador)
+         console.log(tags)
 
-                        <li class="nav-item">
-                            <a class="btn dev-link__on--orange" href="#"><span>#</span>dfgdg</a>
-                        </li>
-                       
-                    </ul>
-                </div>
-                <div class="card-body__interactions d-flex justify-content-between">
-                    <div class="card-body__heart d-flex justify-content-start">
-                        <ul class="nav nav-pills">
-                            <li class="nav-item"><a class="nav-link btn p-2 " href="#"><span class="icon icon-heard"></span> 65 reactions</a></li>
-                            <li class="nav-item"><a class="nav-link p-2" href="#"><span class="icon icon-message"></span> 20 comments</a></li>
-                        </ul>
-                    </div>
-                    <div class="card-body__save d-flex justify-content-end">
-                        <p class="d-flex justify-content-between align-items-center"><span>${minToRead} min read</span><a class="nav-link dev-btn__gray ms-3" href="#">Save</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--end card-->
-        `
+         if (contador === 1){
+
+            template += `
+            <!--Start card-->
+            <div class="card card-body"> 
+            <section class="container">
+               <div class="row">
+                  <div class="col-12 col-lg-12">
+                     <div class="cover-container">
+                        <img class="cover-container__image" src="${urlCoverImage}" alt="">
+                     </div>
+                     <div class="d-inline-flex">
+                        <img src="${avatarAuthor}" alt="image user profile" height="50px"
+                           style="border-radius: 360px; display: inline-flex;">
+                        <div>
+                           <h6 class="m-0 ms-2">${author}</h6>
+                           <p class="m-0 ms-2">${createdDate}</p>
+                        </div>
+                     </div>
+                     <div class="ps-5 ms-2">
+                        <h3> <a class="card__tittle" href="post.html?id${onePost}" target="_blank">${title}</a></h3>
+                        <div>
+                           <a class="card__green-bg" href="">#discuss</a>
+                           <a href="">#beginners</a>
+                           <a href="">#programming</a>
+                           <a href="">#computerscience</a>
+                           <div>
+                              <div class="d-flex justify-content-between">
+                                 <div>
+                                 <button class="card__nobg-button"><img src="/images/main/heart-icon.svg" alt=""> 21 reactions</button>
+                                 <button class="card__nobg-button"><img src="/images/main/coments icon.svg" alt=""> 74 comments</button>
+                              </div>
+                              <div>
+                                 <button class="card__nobg-button card__read-button"> ${minToRead} min read</button>
+                                 <button class="card__save-button">Save</button>
+                              </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div> 
+            <!--end card-->
+            `    
+         } else{
+
+            template += `
+            <!--Start card-->
+            <div class="card card-body"> 
+            <section class="container">
+               <div class="row">
+                  <div class="col-12 col-lg-12">
+                     <div class="d-inline-flex">
+                        <img src="${avatarAuthor}" alt="image user profile" height="50px"
+                           style="border-radius: 360px; display: inline-flex;">
+                        <div>
+                           <h6 class="m-0 ms-2">${author}</h6>
+                           <p class="m-0 ms-2">${createdDate}</p>
+                        </div>
+                     </div>
+                     <div class="ps-5 ms-2">
+                        <h3> <a class="card__tittle" href="post.html?id${onePost}" target="_blank">${title}</a></h3>
+                        <div>
+                           <a class="card__green-bg" href="">#discuss</a>
+                           <a href="">#beginners</a>
+                           <a href="">#programming</a>
+                           <a href="">#computerscience</a>
+                           <div>
+                              <div class="d-flex justify-content-between">
+                                 <div>
+                                 <button class="card__nobg-button"><img src="/images/main/heart-icon.svg" alt=""> 21 reactions</button>
+                                 <button class="card__nobg-button"><img src="/images/main/coments icon.svg" alt=""> 74 comments</button>
+                               </div>
+                               <div>
+                                 <button class="card__nobg-button card__read-button"> ${minToRead} min read</button>
+                                 <button class="card__save-button">Save</button>
+                               </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div> 
+            <!--end card-->
+            ` 
+
+         }
+
+
+       
         
-        document.querySelector("#all__posts").innerHTML = template
+        document.getElementById("relevant").innerHTML = template
         
     }
     
