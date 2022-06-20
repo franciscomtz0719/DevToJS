@@ -1,2 +1,0 @@
-# DevToCopy
-copy of DevTo
