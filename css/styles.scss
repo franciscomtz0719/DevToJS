@@ -520,6 +520,11 @@ a{
     }
   }
 
+  &__input{
+    border:0;
+    display: block;
+  }
+
   &__toolbar{ 
     position: sticky;
     top:0;

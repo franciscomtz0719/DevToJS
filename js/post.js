@@ -1,123 +1,142 @@
-let idpost = window.location.search.substring(8)
-console.log(idpost)
 
-fetch(`https://devto-9a074-default-rtdb.firebaseio.com/post/${idpost}.json`)
-  .then(response => {
-    // console.log(response)
+let idPost = window.location.search.substring(3)
+console.log(idPost)
+
+fetch(`https://devto-9a074-default-rtdb.firebaseio.com/post/${idPost}.json`)
+.then((response) => {
+
     if(!response.ok){
-      throw new Error(`Algo salio mal, status: ${response.status} ${response.statusText} type: ${response.type}`)
-    } else {
-      return response.json()
+        throw new Error (`Algo salió mal ${response.status}`)
+    }else{
+        return response.json()
     }
-  })
-    .then((post) => {
-      console.log(post)
+})
+.then((response) => {
 
-      let {author, avatarAuthor, content, createdDate, minToRead, tags, title, urlCoverImage} = post
-      templateCover=""
-        templateCover =`<a href="" class="devpost-story__cover__image__feed">
-        <img class="devpost-story__cover__image__feed" src="${urlCoverImage}" alt="" width="650" height="275" >
-    </a>
-        
-        `
-        document.querySelector(".devpost-article__cover").innerHTML = templateCover
-      templateHeader = ""      
-        templateHeader =  `
-        <div class="devpost-story__author-pic">
-        <a href="" class="devpost-avatar">
-            <img src="${avatarAuthor}" alt="" class="devpost-avatar__image">
-        </a>
-        
-        </div>
-        <div>
-            <div><button class="devpost-story__secundary fw-medium m:hidden" href="">${author}</button></div>
-            <div>${createdDate}</div>
-        </div>
-            `       
-        document.querySelector(".devpost-story__meta").innerHTML = templateHeader
+    console.log(response)
 
-        templateBody = ""      
-        templateBody =  `
-            <h3 class="devpost-story__title">${title} </h3>
-            <div class="devpost-story__tags">
-                <a href="" class="devpost-tag"> <span class="devpost-tag__prefix">#</span> javascript</a>
-                <a href="" class="devpost-tag"> <span class="devpost-tag__prefix">#</span> javascript</a>
-                <a href="" class="devpost-tag"> <span class="devpost-tag__prefix">#</span> javascript</a>
-                <a href="" class="devpost-tag"> <span class="devpost-tag__prefix">#</span> javascript</a>
-            </div>
-            <div class="devpost-story__bottom">
-            <div class="devpost-sory__details">                                                
-            </div>
-            <div class="devpost-story__body">
-                <p> ${content}</p>
-            </div>        
-            `       
-        document.querySelector(".devpost-story__detail").innerHTML = templateBody
+    
+    let {author, avatarAuthor, content, createdDate, minToRead, tags, title, urlCoverImage} = response
+    
+    let template = 
+    `
+    <!-- Card container user detailed user post start -->
+    <div class="card card-body d-flex-column">
       
-    })
-    .catch((err) => {
-      console.log(err)
-  
-    })
-// //=======
-// let bntPost = document.getElementById('sendPost')
-// bntPost.addEventListener('click', () => {
+      <section class="container">
+        <div class="row">
+          <div class="col-12 col-lg-12">
+            <div class="card__profile-container d-flex-column m-3">
+<!-- cover image link -->
+                <div class="cover-container">
+                    <img class="cover-container__image" src="${urlCoverImage}" alt="">
+                 </div>
+                <div class="card__username-container d-flex">
+<!-- User image profile -->
+                    <img
+                    src="
+                    
+                    "
+                    alt="image user profile"
+                    height="50px"
+                    style="border-radius: 360px"
+                  />
+                  <div class="card__username-container">
+                    <h6 class="card__profile-name m-0"> ${author}
+<!-- Post author -->
+                    </h6>
+                    <p class="card__date m-0"> ${createdDate}
+<!-- Card date -->
+                    </p>
+                  </div>
+                </div>
 
-    
-    
-//     title = document.getElementById('form__title').value
-//     content = document.getElementById('form__content').value
-//     tags = document.getElementById('form__tags').value 
-//     urlCoverImage = document.getElementById('form__urlCoverImage').value 
-//     author = document.getElementById('form__author').value 
-//     minToRead = document.getElementById('form__mintoRead').value 
-//     avatarAuthor = document.getElementById('form__avatar-author').value  
-    
-//     let today = new Date();
-//     let createdDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()   
-    
-//     if(
-//         title === '' ||
-//         content === '' ||
-//         tags === '' ||
-//         urlCoverImage === '' ||
-//         author === '' ||
-//         createdDate === '' ||
-//         minToRead === ''||
-//         avatarAuthor === ''
-//         ){
-//             alert('Please fill all required fields')
-//         }else{ 
-//             let newPost = {
-//                 title: title,
-//                 content: content,
-//                 tags: tags,
-//                 urlCoverImage: urlCoverImage,
-//                 author: author,
-//                 createdDate: createdDate,
-//                 minToRead: minToRead,
-//                 avatarAuthor: avatarAuthor    
-//             }
+              <h3 class="card__tittle card__post-tittle"> ${title}
+<!-- cart title content -->
+              </h3>
+              <button class="card__tags m-2">#Discuss</button
+              ><button class="card__tags m-2">#help</button
+              ><button class="card__tags m-2">#ubuntu</button
+              ><button class="card__tags m-2">#linux</button>
+              <p class="card__post-body">${content}
+<!-- Card body content -->
+              </p>
 
-//     fetch( 'https://devto-9a074-default-rtdb.firebaseio.com/post/.json', {
-//         method: 'POST',
-//         body: JSON.stringify(newPost),
-//         headers: {
-//             "Content-type": "application/json; charset=UTF-8"
-//         } 
-//     })
-//     .then(( response)=> {
-//         return response.json()
-//     })
-//     .then( (finalResponse) => {
-//     console.log(finalResponse)
+              <div class="card__footer py-3 border-0">
+                <div class="w-100">
+                  <div class="d-flex flex-start w-100">
+<!-- profile user image -->
+                    <img class="rounded-circle shadow-1-strong me-3"
+                      src="${avatarAuthor}" alt="avatar" width="40"
+                      height="40" />
+                    <div class="form-outline w-100">
+                      <textarea class="form-control" id="textAreaExample" rows="4"
+                        style="background: #fff;">Add to the discussion</textarea>
+                    
+                        <div class="form-outline__upload-template-button">
+                            <div class="form-outline__upload-template-button d-inline-flex">
+                              <button
+                                type="button"
+                                class="btn btn-primary btn-sm card__btn-aux"
+                              >
+                                <img
+                                  src="../images/discuss-view/upload-picture.svg"
+                                  alt=""
+                                />
+                                
+                                Upload image
+                              </button>
+                              <button
+                                type="button"
+                                class="btn btn-outline-primary btn-sm card__btn-aux"
+                              >
+                                <img
+                                  src="../images/discuss-view/response-template.svg"
+                                  alt=""
+                                />
+                                Templates
+                              </button>
+                            </div>
+                            <img
+                              src="../images/discuss-view/markdown-guide-icon.svg"
+                              alt=""
+                              type="button"
+                              class="btn btn-secondary dropdown-toggle bg-light border-0"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            />
+                          </div>    
+                    
+                    </div>
+                  </div>
+
+                </div>
+                <div class="d-flex mt-2 pt-1 ms-5 ps-2">
+                  <button type="button" class="btn btn-primary btn-sm card__btn-submit">
+                    Submit
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary btn-sm"
+                  >
+                    Preview
+                  </button>
+                </div>
+                <div
+                  class="card__footer-conduct d-flex justify-content-center"
+                >
+                  <a href="">Code of Conduct </a><span>·</span
+                  ><a href=""> Report abuse</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- detailed card end -->
     
-//     })
-//     .catch( (err) => {
-//         console.log(err)
-//     })
-        
-// }
+    `
 
-// })
-
+document.getElementById('main__container').innerHTML = template
+})
