@@ -9,15 +9,17 @@
     <link rel="icon" type="image/x-icon"
         href="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="style-icon.css">
+    
 </head>
 
-<body bg-light>
+<body class="bg-light header-default" >
     <!--start header-->
     <header class="bg-white">
         <div class="container p-0">
-            <nav class="navbar fixed-top bg-white row">                
+            <nav class="navbar fixed-top bg-white row ">                
                 <div class="container  col-6  justify-content-start">
                     <!--buttom toggle-->
                     <button class="navbar-toggler d-md-none " type="button" data-bs-toggle="offcanvas"
@@ -37,13 +39,25 @@
                         </div>
                     </form>
                 </div>
-                <!--login-->
+                <!--user-->
                 <div class="container col-6  justify-content-end ">
                     <button type="button" class=" btn dev-link  d-md-none ">
                         <i class=" icon icon-search"></i>
                     </button>
-                    <button type="button" class="btn dev-link">log in</button>
-                    <button type="button" class="btn btn-outline-primary">Create account</button>
+                   
+                    <button type="button" class="btn btn-outline-primary">Create post</button>
+                    <a href="/notifications" id="notifications-link" class="dev-link c-link--icon-alone dev-link__block mx-1" aria-label="Notifications">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="artzoexegvlpo2mf8ypd5gzq3eg67imu" class="dev-icon"><title id="artzoexegvlpo2mf8ypd5gzq3eg67imu">Notifications</title>
+                        <path d="M20 17h2v2H2v-2h2v-7a8 8 0 1116 0v7zm-2 0v-7a6 6 0 10-12 0v7h12zm-9 4h6v2H9v-2z"></path></svg>
+                    </a>
+                    <div class="mx-1">
+
+                    <button type="button" class="dev-btn p-1 radius-full" id="member-menu-button" aria-label="Navigation menu" aria-expanded="true">
+                        <span class="dev-avatar dev-avatar__l">
+                            <img class="dev-avatar__image" alt="" id="nav-profile-image" src="https://res.cloudinary.com/practicaldev/image/fetch/s--22OpYeSP--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/878742/3f32ec7d-3cc2-4ef4-a9e4-35b5031c02c5.jpeg">
+                        </span>
+                    </button>
+                    </div>
                 </div>
                 <!--start content toggle-->
                 <div class="offcanvas offcanvas-start d-flex d-md-none" tabindex="-1" id="offcanvasNavbar"
@@ -55,7 +69,7 @@
                             aria-label="Close"></button>
                     </div>
                     <!--body toggle-->
-                    <div class=" offcanvas-body">
+                    <div class="offcanvas-body">
 
                         <div class="dev-aside__card-secondary ">
                             <h2 class="title__second lh-tight mb-4">
@@ -883,85 +897,49 @@
             <!--start main-->
             <main class="container col-12 col-8 col-lg-6">
                 <!--start tabs-->
-                <div class="dev-main__principal-menu">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item m-2">
-                            <a class="nav-link active" href="#">Relevant</a>
-                        </li>
-                        <li class="nav-item m-2">
-                            <a class="nav-link active" href="#">Latest</a>
-                        </li>
-                        <li class="nav-item m-2">
-                            <a class="nav-link active" href="#">Top</a>
-                        </li>
-                    </ul>
-                </div>
+                
+                
+                <ul class="nav" id="myTab" role="tablist">
+                    <li class="nav-link" role="presentation">
+                      <button class="nav-link active" id="relevant-tab" data-bs-toggle="tab" data-bs-target="#relevant" type="button" role="tab" aria-controls="relevant" aria-selected="true">Relevant</button>
+                    </li>
+                    <li class="nav-link" role="presentation">
+                      <button class="nav-link" id="latest-tab" data-bs-toggle="tab" data-bs-target="#latest" type="button" role="tab" aria-controls="latest" aria-selected="false">Latest</button>
+                    </li>
+                    <li class="nav-link" role="presentation">
+                      <button class="nav-link" id="top-tab" data-bs-toggle="tab" data-bs-target="#top" type="button" role="tab" aria-controls="top" aria-selected="false">top</button>
+                    </li>
+                    
+                  </ul>
                 <!--end tabs-->
-                <div  class="dev-main__container">
-                    <div id="all__posts" class="dev-main__card">
-                        <!--First card-->
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="dev-aside__card-header">
-                                    <img src="images/img-java.jpg" alt="What is the One language/framework you refuse to use">
-                                </div>
-
-                                <div class="card-header__info d-flex">
-                                    <div class="card-header__image-user flex-shrink-0">
-                                        <img src="images/download.webp">
-                                    </div>
-                                    <!--Aqui el over despliega ventanita-->
-                                    <div class="card-header__text flex-grow-1 ms-3">
-                                        <a href="#">Alvaro Montoro</a>
-                                        <p>Apr 30</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <a class="d-flex flex-grow-1 ms-5" href="post.html">
-                                    <h2>Creating a firework effect with CSS</h2>
-                                </a>
-                                <div class="card-body__tags d-flex flex-grow-1 ms-4">
-                                    <ul class="nav nav-pills">
-                                        <li class="nav-item">
-                                            <a class="btn dev-link__on--orange" href="#"><span>#</span>Css
-                                    </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="btn dev-link__on--indigo" href="#"><span>#</span> Html
-                                    </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="btn dev-link__on--purple" href="#"><span>#</span> Webdev
-                                    </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="btn dev-link__on--orange" href="#"><span>#</span> Tutorial
-        
-                                    </a>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                                <div class="card-body__interactions d-flex justify-content-between">
-                                    <div class="card-body__heart d-flex justify-content-start">
-                                        <ul class="nav nav-pills">
-                                            <li class="nav-item"><a class="nav-link btn p-2 " href="#"><span class="icon icon-heard"></span> 65 reactions</a></li>
-                                            <li class="nav-item"><a class="nav-link p-2" href="#"><span class="icon icon-message"></span> 20 comments</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="card-body__save d-flex justify-content-end">
-                                        <p class="d-flex justify-content-between align-items-center"><span>1 min read</span><a class="nav-link dev-btn__gray ms-3" href="#">Save</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end card-->
-                       
+                 
+                  <div class="tab-content">
+                    <!-- start tabs content relevant -->
+                    <div class="tab-pane active all__posts" id="relevant" role="tabpanel" aria-labelledby="relevant-tab">
                         
-                        
+
                     </div>
-                </div>
+                    <!-- end tabs content relevant -->
+
+                    <!-- start tabs content latest -->
+                    <div class="tab-pane" id="latest" role="tabpanel" aria-labelledby="latest-tab">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil inventore modi at repellendus fuga tempore aspernatur temporibus nulla a, aperiam quibusdam, mollitia quo fugiat nesciunt deleniti est, neque perferendis quam?</p>
+                    </div>
+                    <!-- end tabs content latest -->
+
+                    <!-- start tabs content top -->
+                    <div class="tab-pane" id="top" role="tabpanel" aria-labelledby="top-tab">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et odit magni, eum voluptates illum, omnis quos quidem eos maiores sunt veritatis magnam ullam aliquid quibusdam ex, aliquam dolorum tempore aut.</p>
+                    </div>
+                    <!-- end tabs content top -->
+                  </div>
+                  
+                  <!-- <script>
+                    var firstTabEl = document.querySelector('#myTab li:last-child a')
+                    var firstTab = new bootstrap.Tab(firstTabEl)
+                  
+                    firstTab.show()
+                  </script> -->
             </main>
             <!--end main-->
 
