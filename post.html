@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="style-icon.css">
 </head>
 
-<body bg-light>
+<body class="bg-light header-default">
     <!--start header-->
     <header class="bg-white">
         <div class="container p-0">
@@ -493,42 +493,36 @@
                     <div class="col-11  ">
                         
                         <div class="dev-main my-3">
-                            <!--start header post-->
-                            <div class="dev-main__header-post">
-                                <div >
-                                    <img class="dev-main__image"src="images/top-post.png" alt="foto principal">
-                                </div>
-                                <div class="dev-main__usuario">
-                                    <div class="dev-main__usuario">
-                                        <img src="images/usuario.png" alt="foto usuario">
+                            <!-- start post -->
+                                <article class="devpost-story cursor-pointer devpost-story--featured ">
+                                    <!-- article cover -->
+                                    <div class="devpost-article__cover devpost-story__cover__image__feed">
+                                        
                                     </div>
-                                    <a href="#"><strong>Tyler Hawkins</strong> </a>
-                                    <p class="fs__xs">Posted on 4 may</p>
+                                    <div class="devpost-story__body">
+                            <!-- article top  -->
+                                    <div class="devpost-story__top">
+                                        <div class="devpost-story__meta">
+                                            <div class="devpost-story__author-pic">
+                                                <a href="" class="devpost-avatar">
+                                                    <img src="${avatarAuthor}" alt="" class="devpost-avatar__image">
+                                                </a>
+                                                
+                                            </div>
+                                            <div>
+                                                <div><button class="devpost-story__secundary fw-medium m:hidden" href="">${author}</button></div>
+                                                <div>${createdDate}</div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <!-- article detail -->
+                                    <div class="devpost-story__detail">
+                                        
+                                    </div>
                                 </div>
-                            </div>
-                            <!--end header post-->
-                            <!--start body post-->
-                            <div class="dev-main__body-post">
-                                <div class="container" >
-                                    <h1>Think Before You Code</h1>
-                                    <ul class="nav nav-pills">
-                                        <li><a href="#" class="btn btn-sm  dev-link__on--green"><span>#</span> programming</a></li>
-                                        <li><a href="#" class="btn btn-sm  dev-link__on--orange"><span>#</span> beginners</a></li>
-                                        <li><a href="#" class="btn btn-sm  dev-link__on--cyan"><span>#</span> career</a></li>
-                                        <li><a href="#" class="btn btn-sm  dev-link__on--purple"><span>#</span> webdev</a></li>
-                                    </ul>
-                                    <p>Think before you code. I give this advice to every junior engineer I meet. Yet most younger developers have a hard time following it.</p>
-                                    <p>Taking the time to slow down and think will make you a more efficient engineer and a better troubleshooter and problem solver.</p>
-                                    <p>Let’s look at three scenarios where this is relevant: in job interviews, in bug fixing, and in feature development.</p>
-                                    <hr>
-                                    <h2>Job Interviews</h2>
-                                    <p>It’s a common mistake during whiteboard interviews to start coding before you fully understand the problem. The interviewer likely gave you a problem statement that intentionally or unintentionally had many details left out.</p>
-                                    <p>For instance, what assumptions can you make? What are your constraints? Can you assume that you will always be given valid input, or do you need to guard against invalid arguments? Will the dataset be small enough that you can take a brute force approach, or do you need to optimize your algorithm for specific space or time constraints? Ask questions until you feel that you fully understand the problem.</p>
-                                    <p>Next, what test cases should you consider? It’s often not necessary to write out fully functional tests during a coding exercise, but it’s a good idea to jot down the types of input you’d like to test and the expected output for each one. For example, if you are writing a function that determines if a string is a palindrome, you might want to have at least the following as your test inputs: racecar, noon, dog, moon, 42. With those five test cases, you’re able to consider how your code should handle palindromes of even or odd length (racecar and noon), strings of even or odd length that are not palindromes (dog and moon), and invalid input (42). I’m sure you can think of other test cases to consider as well.</p>
-                                    <p>Finally, are you able to write some pseudocode to validate your approach at a high level? Before getting into the nitty gritty details of the actual code, it’s a good idea to think through how you might tackle the problem so you can catch issues in your approach early on.</p>
-                                </div>
-                            </div> 
-                            <!--end body post-->
+                            </article>
+                            <!-- end post -->
                             <!--start commets post-->
                             <div class="dev-main__commets-post">
                                 <div class="dev-main__commets-header">

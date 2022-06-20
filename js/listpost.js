@@ -41,7 +41,7 @@ fetch("https://devto-9a074-default-rtdb.firebaseio.com/post/.json")
                 </div>
                 <!-- article detail -->
                 <div class="devpost-story__detail">
-                    <h3 class="devpost-story__title"><a href="">${title}</a> </h3>
+                    <h3 class="devpost-story__title"><a href="/post.html?idPost=${onePost}">${title}</a> </h3>
                     <div class="devpost-story__tags">
                         <a href="" class="devpost-tag"> <span class="devpost-tag__prefix">#</span> javascript</a>
                         <a href="" class="devpost-tag"> <span class="devpost-tag__prefix">#</span> javascript</a>

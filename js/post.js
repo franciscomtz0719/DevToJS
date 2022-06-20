@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-let idpost = window.location.search.substring(3)
+let idpost = window.location.search.substring(8)
 console.log(idpost)
 
 fetch(`https://devto-9a074-default-rtdb.firebaseio.com/post/${idpost}.json`)
@@ -15,102 +14,110 @@ fetch(`https://devto-9a074-default-rtdb.firebaseio.com/post/${idpost}.json`)
       console.log(post)
 
       let {author, avatarAuthor, content, createdDate, minToRead, tags, title, urlCoverImage} = post
+      templateCover=""
+        templateCover =`<a href="" class="devpost-story__cover__image__feed">
+        <img class="devpost-story__cover__image__feed" src="${urlCoverImage}" alt="" width="650" height="275" >
+    </a>
+        
+        `
+        document.querySelector(".devpost-article__cover").innerHTML = templateCover
       templateHeader = ""      
         templateHeader =  `
-            <div >
-                <img class="dev-main__image"src="${urlCoverImage}" alt="foto principal">
-            </div>
-            <div class="dev-main__usuario">
-                <div class="dev-main__usuario">
-                    <img src="${avatarAuthor}" alt="foto usuario">
-                </div>
-                <a href="#"><strong>${author}</strong> </a>
-                <p class="fs__xs">${createdDate}</p>
-            </div>
+        <div class="devpost-story__author-pic">
+        <a href="" class="devpost-avatar">
+            <img src="${avatarAuthor}" alt="" class="devpost-avatar__image">
+        </a>
+        
+        </div>
+        <div>
+            <div><button class="devpost-story__secundary fw-medium m:hidden" href="">${author}</button></div>
+            <div>${createdDate}</div>
+        </div>
             `       
-        document.querySelector(".dev-main__header-post").innerHTML = templateHeader
+        document.querySelector(".devpost-story__meta").innerHTML = templateHeader
 
         templateBody = ""      
         templateBody =  `
-        <div class="container" >
-        <h1>${title}</h1>
-        <ul class="nav nav-pills">
-            
-            <li><a href="#" class="btn btn-sm  dev-link__on--green"><span>#</span>${tags}</a></li>
-            <li><a href="#" class="btn btn-sm  dev-link__on--green"><span>#</span>${tags}</a></li>
-            <li><a href="#" class="btn btn-sm  dev-link__on--green"><span>#</span>${tags}</a></li>
-            <li><a href="#" class="btn btn-sm  dev-link__on--green"><span>#</span>${tags}</a></li>
-     
-        </ul>
-        <div><p> ${content}<p></div>
-        
+            <h3 class="devpost-story__title">${title} </h3>
+            <div class="devpost-story__tags">
+                <a href="" class="devpost-tag"> <span class="devpost-tag__prefix">#</span> javascript</a>
+                <a href="" class="devpost-tag"> <span class="devpost-tag__prefix">#</span> javascript</a>
+                <a href="" class="devpost-tag"> <span class="devpost-tag__prefix">#</span> javascript</a>
+                <a href="" class="devpost-tag"> <span class="devpost-tag__prefix">#</span> javascript</a>
+            </div>
+            <div class="devpost-story__bottom">
+            <div class="devpost-sory__details">                                                
+            </div>
+            <div class="devpost-story__body">
+                <p> ${content}</p>
+            </div>        
             `       
-        document.querySelector(".dev-main__body-post").innerHTML = templateBody
+        document.querySelector(".devpost-story__detail").innerHTML = templateBody
       
     })
     .catch((err) => {
       console.log(err)
   
     })
-=======
-let bntPost = document.getElementById('sendPost')
-bntPost.addEventListener('click', () => {
+// //=======
+// let bntPost = document.getElementById('sendPost')
+// bntPost.addEventListener('click', () => {
 
     
     
-    title = document.getElementById('form__title').value
-    content = document.getElementById('form__content').value
-    tags = document.getElementById('form__tags').value 
-    urlCoverImage = document.getElementById('form__urlCoverImage').value 
-    author = document.getElementById('form__author').value 
-    minToRead = document.getElementById('form__mintoRead').value 
-    avatarAuthor = document.getElementById('form__avatar-author').value  
+//     title = document.getElementById('form__title').value
+//     content = document.getElementById('form__content').value
+//     tags = document.getElementById('form__tags').value 
+//     urlCoverImage = document.getElementById('form__urlCoverImage').value 
+//     author = document.getElementById('form__author').value 
+//     minToRead = document.getElementById('form__mintoRead').value 
+//     avatarAuthor = document.getElementById('form__avatar-author').value  
     
-    let today = new Date();
-    let createdDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()   
+//     let today = new Date();
+//     let createdDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()   
     
-    if(
-        title === '' ||
-        content === '' ||
-        tags === '' ||
-        urlCoverImage === '' ||
-        author === '' ||
-        createdDate === '' ||
-        minToRead === ''||
-        avatarAuthor === ''
-        ){
-            alert('Please fill all required fields')
-        }else{ 
-            let newPost = {
-                title: title,
-                content: content,
-                tags: tags,
-                urlCoverImage: urlCoverImage,
-                author: author,
-                createdDate: createdDate,
-                minToRead: minToRead,
-                avatarAuthor: avatarAuthor    
-            }
+//     if(
+//         title === '' ||
+//         content === '' ||
+//         tags === '' ||
+//         urlCoverImage === '' ||
+//         author === '' ||
+//         createdDate === '' ||
+//         minToRead === ''||
+//         avatarAuthor === ''
+//         ){
+//             alert('Please fill all required fields')
+//         }else{ 
+//             let newPost = {
+//                 title: title,
+//                 content: content,
+//                 tags: tags,
+//                 urlCoverImage: urlCoverImage,
+//                 author: author,
+//                 createdDate: createdDate,
+//                 minToRead: minToRead,
+//                 avatarAuthor: avatarAuthor    
+//             }
 
-    fetch( 'https://devto-9a074-default-rtdb.firebaseio.com/post/.json', {
-        method: 'POST',
-        body: JSON.stringify(newPost),
-        headers: {
-            "Content-type": "application/json; charset=UTF-8"
-        } 
-    })
-    .then(( response)=> {
-        return response.json()
-    })
-    .then( (finalResponse) => {
-    console.log(finalResponse)
+//     fetch( 'https://devto-9a074-default-rtdb.firebaseio.com/post/.json', {
+//         method: 'POST',
+//         body: JSON.stringify(newPost),
+//         headers: {
+//             "Content-type": "application/json; charset=UTF-8"
+//         } 
+//     })
+//     .then(( response)=> {
+//         return response.json()
+//     })
+//     .then( (finalResponse) => {
+//     console.log(finalResponse)
     
-    })
-    .catch( (err) => {
-        console.log(err)
-    })
+//     })
+//     .catch( (err) => {
+//         console.log(err)
+//     })
         
-}
+// }
 
-})
->>>>>>> 2056e33e8ef260ef751daea93891ed0f6cff0f0e
+// })
+
