@@ -488,4 +488,20 @@ a{
 
 
 
-///////////////lenny
+//form
+.post-form{
+  max-width:  var(--site-width);
+  height: 100vh;
+  display: grid;
+  padding: 0 var(--layout-padding);
+  gap: 0 var(--layout-gap);
+  margin: auto 0;
+  grid-template-rows:  min-content 1fr min-content;
+  &__header{
+    display:flex;
+    align-items: center;
+    height: 56px;
+    padding: 0 0.5remm;
+  }
+
+}

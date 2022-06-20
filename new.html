@@ -20,237 +20,219 @@
 <body>
     <!-- start main -->
     <main class="main ">
-        <!-- start nav -->
-        <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid">
-                <img class="site-logo__img"
-                    src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
-                    alt="DEV Community">
-                <p class="me-auto mb-2 mb-lg-0">Create a Post</p>
-
-                <div class="crayons-article-form__close">
-                    <button type="button" class="c-btn c-btn--icon-alone" title="Close the editor"
-                        aria-label="Close the editor"><svg class="crayons-icon c-btn__icon" aria-hidden="true"
-                            focusable="false" width="24" height="24" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="m12 10.586 4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636l4.95 4.95z">
-                            </path>
-                        </svg></button>
-                </div>
-            </div>
-        </nav>
-        <!-- end nav -->
         <!-- start conteiner -->
         <div class="container">
+            <!-- start form -->
+            <form class="post-form" action="#">
 
-            <div class="card shadow rounded mt-5 mb-5 p-5 ">
-                <!-- start form -->
-                <form action="#">
-                    <!--start tabs-->
-                <ul class="nav" id="myTab" role="tablist">
-                    <li class="nav-link" role="presentation">
-                      <button class="nav-link active" id="edit-tab" data-bs-toggle="tab" data-bs-target="#edit" type="button" role="tab" aria-controls="edit" aria-selected="true">edit</button>
-                    </li>
-                    <li class="nav-link" role="presentation">
-                      <button class="nav-link" id="preview-tab" data-bs-toggle="tab" data-bs-target="#preview" type="button" role="tab" aria-controls="preview" aria-selected="false">preview</button>
-                    </li>
-                    
-                    
-                  </ul>
+                <!-- start form header -->
+                <span></span>
+                <div><span>Create Post</span></div>
+                <!--start tabs-->
+                <nav>
+                    <ul class="nav" id="myTab" role="tablist">
+                        <li class="nav-link" role="presentation">
+                        <button class="nav-link active" id="edit-tab" data-bs-toggle="tab" data-bs-target="#edit" type="button" role="tab" aria-controls="edit" aria-selected="true">edit</button>
+                        </li>
+                        <li class="nav-link" role="presentation">
+                        <button class="nav-link" id="preview-tab" data-bs-toggle="tab" data-bs-target="#preview" type="button" role="tab" aria-controls="preview" aria-selected="false">preview</button>
+                        </li>
+                    </ul>
+                </nav>
                 <!--end tabs-->
-                    <div class="tab-content">
-                    <!-- start tabs content edit -->
+                <div class="post-form__close"><button type="button" class="c-btn c-btn--icon-alone" title="Close the editor" aria-label="Close the editor"><svg class="crayons-icon c-btn__icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 10.586 4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636l4.95 4.95z"></path></svg></button></div>
+                <!-- end form header -->
 
-                    <div class="tab-pane active all__posts" id="edit" role="tabpanel" aria-labelledby="edit-tab"> 
-                        <label for="">author</label> 
-                        <input class="form-content__author" type="text">
-                        <label for="">avatarAuhotr</label> 
-                        <input class="form-content__avatarAuthor" type="text">
-                        <label for="">imageCover</label> 
-                        <input class="form-content__url" type="text">
-                        <label for="">title</label> 
-                        <input type="text" class="form-conten__title">
-                        <!-- start tags -->
-                        <div class=" form-content__tags">
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="# webdev" aria-label="javascript"
-                                    aria-describedby="button-addon2">
-                                <button class="btn btn-close btn-outline-secondary" type="button"
-                                    id="button-addon2"></button>
+                <div class="tab-content">
+                <!-- start tabs content edit -->
 
-                            </div>
+                <div class="tab-pane active all__posts" id="edit" role="tabpanel" aria-labelledby="edit-tab"> 
+                    <label for="">author</label> 
+                    <input class="form-content__author" type="text">
+                    <label for="">avatarAuhotr</label> 
+                    <input class="form-content__avatarAuthor" type="text">
+                    <label for="">min to read</label> 
+                    <input class="form-content__min" type="text">
+                    <label for="">imageCover</label> 
+                    <input class="form-content__url" type="text">
+                    <label for="">title</label> 
+                    <input type="text" class="form-conten__title">
+                    <!-- start tags -->
+                    <div class=" form-content__tags">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="# webdev" aria-label="javascript"
+                                aria-describedby="button-addon2">
+                            <button class="btn btn-close btn-outline-secondary" type="button"
+                                id="button-addon2"></button>
 
                         </div>
-                        <!-- start list tags -->
-                        <label for="">Tags</label> 
-                        <select name="" id="" class="form-content__listtags">
-                            <option selected>Open this select menu</option>
-                            <option value="javascrip">
-                                <h6># javascrip</h6>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, est?</p>
-                            </option>
-                            <option value="2">
-                                <h6># javascrip</h6>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, est?</p>
-                            </option>
-                        </select>
-                        <div class="form-contet__edit">
-                            <button class="form-contet__edit--bold dev-link"><svg class="crayons-icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 11h4.5a2.5 2.5 0 0 0 0-5H8v5Zm10 4.5a4.501 4.501 0 0 1-4.5 4.5H6V4h6.5a4.5 4.5 0 0 1 3.256 7.606A4.5 4.5 0 0 1 18 15.5ZM8 13v5h5.5a2.5 2.5 0 0 0 0-5H8Z"></path></svg></button>
-                            <button class="form-contet__edit--italic  dev-link"><svg class="crayons-icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 20H7v-2h2.927l2.116-12H9V4h8v2h-2.927l-2.116 12H15v2Z"></path></svg></button>
-                            <button class="form-contet__edit--src  dev-link"><svg class="crayons-icon" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M18.364 15.536 16.95 14.12l1.414-1.414a5.001 5.001 0 0 0-3.531-8.551 5 5 0 0 0-3.54 1.48L9.879 7.05 8.464 5.636 9.88 4.222a7 7 0 1 1 9.9 9.9l-1.415 1.414zm-2.828 2.828-1.415 1.414a7 7 0 0 1-9.9-9.9l1.415-1.414L7.05 9.88l-1.414 1.414a5 5 0 1 0 7.071 7.071l1.414-1.414 1.415 1.414zm-.708-10.607 1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"></path></svg></button>
-                            <button class="form-contet__edit--listO  dev-link"><svg class="crayons-icon" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8 4h13v2H8zM5 3v3h1v1H3V6h1V4H3V3zM3 14v-2.5h2V11H3v-1h3v2.5H4v.5h2v1zm2 5.5H3v-1h2V18H3v-1h3v4H3v-1h2zM8 11h13v2H8zm0 7h13v2H8z"></path></svg></button>
-                            <button class="form-contet__edit--listU  dev-link"><svg class="crayons-icon" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8 4h13v2H8zM4.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 6.9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM8 11h13v2H8zm0 7h13v2H8z"></path></svg></button>
-                            <button class="form-contet__edit--heading  dev-link"><svg class="crayons-icon" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8 4h13v2H8zM4.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 6.9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM8 11h13v2H8zm0 7h13v2H8z"></path></svg></button>
-                            <button class="form-contet__edit--quote  dev-link"><svg class="crayons-icon" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 0 1-3.5 3.5 3.871 3.871 0 0 1-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 0 1-3.5 3.5 3.871 3.871 0 0 1-2.748-1.179z"></path></svg></button>
-                            <button class="form-contet__edit--code  dev-link"><svg class="crayons-icon" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m23 12-7.071 7.071-1.414-1.414L20.172 12l-5.657-5.657 1.414-1.414zM3.828 12l5.657 5.657-1.414 1.414L1 12l7.071-7.071 1.414 1.414z"></path></svg></button>
-                            <button class="form-contet__edit--codeB  dev-link"><svg class="crayons-icon" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h16V5zm15 7-3.536 3.536-1.414-1.415L16.172 12 14.05 9.879l1.414-1.415zM7.828 12l2.122 2.121-1.414 1.415L5 12l3.536-3.536L9.95 9.88z"></path></svg></button>
-                            <button class="form-contet__edit--Embed  dev-link"><svg class="crayons-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 9h8L11 24v-9H4l9-15v9Zm-2 2V7.22L7.532 13H13v4.394L17.263 11H11Z"></path></svg></button>
-                            <button class="form-contet__edit--image  dev-link"><svg class="crayons-icon c-btn__icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 5H4v14l9.292-9.294a1 1 0 0 1 1.414 0L20 15.01V5zM2 3.993A1 1 0 0 1 2.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 0 1-.992.993H2.992A.993.993 0 0 1 2 20.007V3.993zM8 11a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"></path></svg></button>
-                            <button class="form-contet__edit--more  dev-link"><svg class="crayons-icon c-btn__icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 17a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm0-7a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm2-5a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"></path></svg></button>
-                        </div>
-                        <label for="">Content</label> 
-                        <textarea class="form-contet__content" name="" id="" cols="30" rows="10"></textarea>                
-                                         
-                    </div>
-                    <!-- end tabs content edit -->
-
-                    <!-- start tabs content preview -->
-                    <div class="tab-pane" id="preview" role="tabpanel" aria-labelledby="preview-tab">
-                        <img src="" alt="">
-                        <h1>titulo del post</h1>
-                        <div class=" form-content__tags">
-                            <div class="tag"><span>#</span>devweb</div>
-                            <div class="tag"><span>#</span>javascrip</div>
-                        </div>
-
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab minima deserunt consequatur ut
-                            error corrupti explicabo mollitia reiciendis ullam eum est reprehenderit q</p>
 
                     </div>
-                    <!-- end tabs content preview -->
-
-                    <!-- start tabs content top -->
-                    <div class="tab-pane" id="top" role="tabpanel" aria-labelledby="top-tab">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et odit magni, eum voluptates illum, omnis quos quidem eos maiores sunt veritatis magnam ullam aliquid quibusdam ex, aliquam dolorum tempore aut.</p>
+                    <!-- start list tags -->
+                    <label for="">Tags</label> 
+                    <select name="" id="" class="form-content__listtags">
+                        <option selected>Open this select menu</option>
+                        <option value="javascrip">
+                            <h6># javascrip</h6>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, est?</p>
+                        </option>
+                        <option value="2">
+                            <h6># javascrip</h6>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, est?</p>
+                        </option>
+                    </select>
+                    <div class="form-contet__edit">
+                        <button class="form-contet__edit--bold dev-link"><svg class="crayons-icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 11h4.5a2.5 2.5 0 0 0 0-5H8v5Zm10 4.5a4.501 4.501 0 0 1-4.5 4.5H6V4h6.5a4.5 4.5 0 0 1 3.256 7.606A4.5 4.5 0 0 1 18 15.5ZM8 13v5h5.5a2.5 2.5 0 0 0 0-5H8Z"></path></svg></button>
+                        <button class="form-contet__edit--italic  dev-link"><svg class="crayons-icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 20H7v-2h2.927l2.116-12H9V4h8v2h-2.927l-2.116 12H15v2Z"></path></svg></button>
+                        <button class="form-contet__edit--src  dev-link"><svg class="crayons-icon" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M18.364 15.536 16.95 14.12l1.414-1.414a5.001 5.001 0 0 0-3.531-8.551 5 5 0 0 0-3.54 1.48L9.879 7.05 8.464 5.636 9.88 4.222a7 7 0 1 1 9.9 9.9l-1.415 1.414zm-2.828 2.828-1.415 1.414a7 7 0 0 1-9.9-9.9l1.415-1.414L7.05 9.88l-1.414 1.414a5 5 0 1 0 7.071 7.071l1.414-1.414 1.415 1.414zm-.708-10.607 1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"></path></svg></button>
+                        <button class="form-contet__edit--listO  dev-link"><svg class="crayons-icon" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8 4h13v2H8zM5 3v3h1v1H3V6h1V4H3V3zM3 14v-2.5h2V11H3v-1h3v2.5H4v.5h2v1zm2 5.5H3v-1h2V18H3v-1h3v4H3v-1h2zM8 11h13v2H8zm0 7h13v2H8z"></path></svg></button>
+                        <button class="form-contet__edit--listU  dev-link"><svg class="crayons-icon" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8 4h13v2H8zM4.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 6.9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM8 11h13v2H8zm0 7h13v2H8z"></path></svg></button>
+                        <button class="form-contet__edit--heading  dev-link"><svg class="crayons-icon" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8 4h13v2H8zM4.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 6.9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM8 11h13v2H8zm0 7h13v2H8z"></path></svg></button>
+                        <button class="form-contet__edit--quote  dev-link"><svg class="crayons-icon" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 0 1-3.5 3.5 3.871 3.871 0 0 1-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 0 1-3.5 3.5 3.871 3.871 0 0 1-2.748-1.179z"></path></svg></button>
+                        <button class="form-contet__edit--code  dev-link"><svg class="crayons-icon" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m23 12-7.071 7.071-1.414-1.414L20.172 12l-5.657-5.657 1.414-1.414zM3.828 12l5.657 5.657-1.414 1.414L1 12l7.071-7.071 1.414 1.414z"></path></svg></button>
+                        <button class="form-contet__edit--codeB  dev-link"><svg class="crayons-icon" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h16V5zm15 7-3.536 3.536-1.414-1.415L16.172 12 14.05 9.879l1.414-1.415zM7.828 12l2.122 2.121-1.414 1.415L5 12l3.536-3.536L9.95 9.88z"></path></svg></button>
+                        <button class="form-contet__edit--Embed  dev-link"><svg class="crayons-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 9h8L11 24v-9H4l9-15v9Zm-2 2V7.22L7.532 13H13v4.394L17.263 11H11Z"></path></svg></button>
+                        <button class="form-contet__edit--image  dev-link"><svg class="crayons-icon c-btn__icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 5H4v14l9.292-9.294a1 1 0 0 1 1.414 0L20 15.01V5zM2 3.993A1 1 0 0 1 2.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 0 1-.992.993H2.992A.993.993 0 0 1 2 20.007V3.993zM8 11a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"></path></svg></button>
+                        <button class="form-contet__edit--more  dev-link"><svg class="crayons-icon c-btn__icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 17a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm0-7a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm2-5a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"></path></svg></button>
                     </div>
-                    <!-- end tabs content top -->
-                  </div>
-                    
-                    <!-- start tab content alert -->
-                    <div class="tab content form-content__alert--title d-none">
-                        <h3>Whoops, something went wrong:</h3>
-                        <ul class="form-content__alert--err">
-                            <li>error</li>
-                            <li>error</li>
-                            <li>error</li>
+                    <label for="">Content</label> 
+                    <textarea class="form-contet__content" name="" id="" cols="30" rows="10"></textarea>                
+                                        
+                </div>
+                <!-- end tabs content edit -->
+
+                <!-- start tabs content preview -->
+                <div class="tab-pane" id="preview" role="tabpanel" aria-labelledby="preview-tab">
+                    <img src="" alt="">
+                    <h1>titulo del post</h1>
+                    <div class=" form-content__tags">
+                        <div class="tag"><span>#</span>devweb</div>
+                        <div class="tag"><span>#</span>javascrip</div>
+                    </div>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab minima deserunt consequatur ut
+                        error corrupti explicabo mollitia reiciendis ullam eum est reprehenderit q</p>
+
+                </div>
+                <!-- end tabs content preview -->
+
+                
+                </div>
+                
+                <!-- start tab content alert -->
+                <div class="tab content form-content__alert--title d-none">
+                    <h3>Whoops, something went wrong:</h3>
+                    <ul class="form-content__alert--err">
+                        <li>error</li>
+                        <li>error</li>
+                        <li>error</li>
+                    </ul>
+
+
+                </div>                    
+                <!-- end form-content -->
+                <!-- star form-aside -->
+                <div class="form-aside col-4">
+                    <div class="form-aside__help">
+                        <h4>Writing a Great Post Title</h4>
+                        <ul>
+                            <li>Think of your post title as a super short (but compelling!) description — like an
+                                overview of the actual post in one short sentence.</li>
+                            <li>Use keywords where appropriate to help ensure people can find your post by search.
+                                <details class="fs-s my-1" open="">
+                                    <summary class="cursor-pointer">Commonly used syntax</summary>
+                                    <table
+                                        class="crayons-card crayons-card--secondary crayons-table crayons-table--compact w-100 mt-2 mb-4 lh-tight">
+                                        <tbody>
+                                            <tr>
+                                                <td class="ff-monospace"># Header<br>...<br>###### Header</td>
+                                                <td>H1 Header<br>...<br>H6 Header</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ff-monospace">*italics* or _italics_</td>
+                                                <td><em>italics</em></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ff-monospace">**bold**</td>
+                                                <td><strong>bold</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ff-monospace">[Link](https://...)</td>
+                                                <td><a href="https://forem.com">Link</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ff-monospace">* item 1<br>* item 2</td>
+                                                <td>
+                                                    <ul class="list-disc ml-5">
+                                                        <li>item 1</li>
+                                                        <li>item 2</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ff-monospace">1. item 1<br>2. item 2</td>
+                                                <td>
+                                                    <ul class="list-decimal ml-5">
+                                                        <li>item 1</li>
+                                                        <li>item 2</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ff-monospace">&gt; quoted text</td>
+                                                <td><span
+                                                        class="pl-2 border-0 border-solid border-l-2 border-base-50">quoted
+                                                        text</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ff-monospace">`inline code`</td>
+                                                <td><code>inline code</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ff-monospace"><span class="fs-xs">```</span><br>code
+                                                    block<br><span class="fs-xs">```</span></td>
+                                                <td>
+                                                    <div class="highlight p-2 overflow-hidden">
+                                                        <code>code block</code></div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </details>
+                            </li>
+
                         </ul>
+                    </div>
 
-
-                    </div>                    
-                    <!-- end form-content -->
-                    <!-- star form-aside -->
-                    <div class="form-aside col-4">
-                        <div class="form-aside__help">
-                            <h4>Writing a Great Post Title</h4>
-                            <ul>
-                                <li>Think of your post title as a super short (but compelling!) description — like an
-                                    overview of the actual post in one short sentence.</li>
-                                <li>Use keywords where appropriate to help ensure people can find your post by search.
-                                    <details class="fs-s my-1" open="">
-                                        <summary class="cursor-pointer">Commonly used syntax</summary>
-                                        <table
-                                            class="crayons-card crayons-card--secondary crayons-table crayons-table--compact w-100 mt-2 mb-4 lh-tight">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="ff-monospace"># Header<br>...<br>###### Header</td>
-                                                    <td>H1 Header<br>...<br>H6 Header</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="ff-monospace">*italics* or _italics_</td>
-                                                    <td><em>italics</em></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="ff-monospace">**bold**</td>
-                                                    <td><strong>bold</strong></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="ff-monospace">[Link](https://...)</td>
-                                                    <td><a href="https://forem.com">Link</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="ff-monospace">* item 1<br>* item 2</td>
-                                                    <td>
-                                                        <ul class="list-disc ml-5">
-                                                            <li>item 1</li>
-                                                            <li>item 2</li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="ff-monospace">1. item 1<br>2. item 2</td>
-                                                    <td>
-                                                        <ul class="list-decimal ml-5">
-                                                            <li>item 1</li>
-                                                            <li>item 2</li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="ff-monospace">&gt; quoted text</td>
-                                                    <td><span
-                                                            class="pl-2 border-0 border-solid border-l-2 border-base-50">quoted
-                                                            text</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="ff-monospace">`inline code`</td>
-                                                    <td><code>inline code</code></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="ff-monospace"><span class="fs-xs">```</span><br>code
-                                                        block<br><span class="fs-xs">```</span></td>
-                                                    <td>
-                                                        <div class="highlight p-2 overflow-hidden">
-                                                            <code>code block</code></div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </details>
-                                </li>
-
-                            </ul>
-                        </div>
+                </div>
+                <!-- end form-aside -->
+                <!-- star form-footer -->
+                <div class="form-footer">
+                    <button class="form-footer">publish</button>
+                    <button class="form-footer">save</button>
+                    <div class="form-footer__options">
+                        <h3>Post options</h3>
+                        <label for="">Canonical URL</label>
+                        <p>Change meta tag <span class="badge text-bg-secondary">canonical_url</span> if this post
+                            was first published elsewhere (like your own blog).</p>
+                        <input type="text" placeholder="https://yoursite.com/post-title">
+                        <label for="">Series</label>
+                        <p>Will this post be part of a series? Give the series a unique name. (Series visible once
+                            it has multiple posts)</p>
+                        <input type="text" placeholder="...">
+                        <button>done</button>
 
                     </div>
-                    <!-- end form-aside -->
-                    <!-- star form-footer -->
-                    <div class="form-footer">
-                        <button class="form-footer">publish</button>
-                        <button class="form-footer">save</button>
-                        <div class="form-footer__options">
-                            <h3>Post options</h3>
-                            <label for="">Canonical URL</label>
-                            <p>Change meta tag <span class="badge text-bg-secondary">canonical_url</span> if this post
-                                was first published elsewhere (like your own blog).</p>
-                            <input type="text" placeholder="https://yoursite.com/post-title">
-                            <label for="">Series</label>
-                            <p>Will this post be part of a series? Give the series a unique name. (Series visible once
-                                it has multiple posts)</p>
-                            <input type="text" placeholder="...">
-                            <button>done</button>
 
-                        </div>
-
-                        <button class="form-footer"><i>c</i> </button>
-                        <button class="form-footer">revert</button>
-                    </div>
-                    <!-- end form-footer -->
+                    <button class="form-footer"><i>c</i> </button>
+                    <button class="form-footer">revert</button>
+                </div>
+                <!-- end form-footer -->
 
 
-                </form>
-                <!-- end form -->
-            </div>
+            </form>
+            <!-- end form -->
+            
 
         </div>
     </main>
