@@ -66,12 +66,3 @@ bntPost.addEventListener('click', () => {
 
 })
 
-const confirmClose = ()=>{
-    let respuesta = confirm("You've made changes to your post. Do you want to navigate to leave this page?")
-     if (respuesta){
-         return true
-     }
-     else{
-         return false
-     }
-}
