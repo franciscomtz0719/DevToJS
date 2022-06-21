@@ -48,11 +48,15 @@ bntPost.addEventListener('click', () => {
         return response.json()
     })
     .then( (finalResponse) => {
+        alert(`el post con el tituo ${title} ha sido creado`  )
     console.log(finalResponse)
     
     })
     .catch( (err) => {
         console.log(err)
+       errConection = document.querySelector('.form-content__alert')
+       errConection.classList.remove('d-none')
+
     })
         
 }
