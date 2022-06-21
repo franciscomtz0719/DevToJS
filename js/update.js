@@ -28,6 +28,7 @@ if (!response){
         urlCoverImage, 
         author, 
         createdDate, 
+        category,
         minToRead, 
         avatarAuthor
     } = response  
@@ -38,7 +39,8 @@ if (!response){
     document.getElementById('form-content__url').value = urlCoverImage
     document.getElementById('form-content__author').value = author
     document.getElementById('form-content__min').value = minToRead 
-    document.getElementById('form-content__avatarAuthor').value = avatarAuthor  
+    document.getElementById('form-content__avatarAuthor').value = avatarAuthor 
+    document.getElementById('form-content__category').value = category  
 
     }
 }).catch(err => {
@@ -58,6 +60,7 @@ btnUpdate.addEventListener('click', () => {
     author = document.getElementById('form-content__author').value 
     minToRead = document.getElementById('form-content__min').value 
     avatarAuthor = document.getElementById('form-content__avatarAuthor').value  
+       category =  document.getElementById('form-content__category').value = category
 
     if(
         title === '' ||
@@ -66,7 +69,8 @@ btnUpdate.addEventListener('click', () => {
         urlCoverImage === '' ||
         author === '' ||
         minToRead === ''||
-        avatarAuthor === ''
+        avatarAuthor === ''||
+        category === ''
     ){
         alert('It looks you left some empty spaces')
     } else {
@@ -78,7 +82,8 @@ btnUpdate.addEventListener('click', () => {
             author: author,
             createdDate: createdDate,
             minToRead: minToRead,
-            avatarAuthor: avatarAuthor 
+            avatarAuthor: avatarAuthor ,
+            category:category
         }
 
         fetch(`https://devto-9a074-default-rtdb.firebaseio.com/post/${idPost}.json`,{
