@@ -92,8 +92,11 @@ btnUpdate.addEventListener('click', () => {
             return response.json()
         }) 
         .then((response) => {
-            alert(`El post ${response.title} con el id ${idPost} ha sido actualizado`)
-            console.log(response)
+            document.querySelector('#alert__success').classList.remove('d-none')
+            setTimeout(() => {
+                window.location.href = '/'
+            },4000)
+            
         }).catch((error) => {
             alert(`No fue posible actualiziar el post ${error}`)
         })
@@ -117,7 +120,7 @@ btnDelete.addEventListener('click', () => {
     }
     })
     .then((response) => {
-        window.location.pathname ='/index.html'
+        window.location.pathname ='/'
     }).catch( err => {
         console.log(err)
         errConection = document.querySelector('.form-content__alert')

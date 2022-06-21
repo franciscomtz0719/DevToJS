@@ -48,7 +48,7 @@ bntPost.addEventListener('click', () => {
         return response.json()
     })
     .then( (finalResponse) => {
-        alert(`el post con el tituo ${title} ha sido creado`  )
+        alert(`el post con el tituo ${title} ha sido creado`)
     console.log(finalResponse)
     
     })
