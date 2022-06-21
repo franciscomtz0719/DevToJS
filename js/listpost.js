@@ -9,7 +9,7 @@ fetch("https://devto-9a074-default-rtdb.firebaseio.com/post/.json")
   }
 })
 .then((posts)=> {
-   
+   // acomoda los post por fecha de ingreso
    arrPost = Object.entries(posts).reverse()
    console.log(arrPost)
    objPost = Object.fromEntries(arrPost)
@@ -19,29 +19,100 @@ fetch("https://devto-9a074-default-rtdb.firebaseio.com/post/.json")
    let contador = 0
    for(onePost in objPost){
 
-         console.log(onePost)
+      //console.log(onePost)
+      //crear variables para los campos
       let {author, avatarAuthor, content, createdDate, minToRead, tags, title, urlCoverImage} = posts[onePost]
          contador += 1
-         console.log(contador)
-         console.log(tags)
+         //console.log(contador)
+         //console.log(tags)
+
+         //separar tags 
          let arrTags = tags.split('#')
          console.log(arrTags)
-
+         //quitar espacios
          function cleanArray(actual) {
             let newArray = new Array();
             for (var i = 0; i < actual.length; i++) {
                if (actual[i]) {
                   newArray.push(actual[i])
-               }
+               }console.log(newArray)
             }
             return newArray
          }
-          
          let cleanTagArr= cleanArray(arrTags)
-         console.log(cleanTagArr)
+         console.log(cleanTagArr)   
+         
+         
+         ////////////// try lore :P 
 
+         const printAll = () => {
+            let allTag = document.getElementById("#all-tab");
+            
+            function tag(elementArray) {
+               if (elementArray === "") {
+                  // template
+                  template = ""
+                  template = ` `
+                  
+               } 
+               document.querySelector("#all-post").innerHTML = template
+            }
+            allTag.addEventListener("click", printAll(), false);
+         }
+         
+
+         const printJs = () => {
+            let jsTag = document.getElementById("#js-tab");
+            
+            function tag(elementArray) {
+               if (elementArray === javascrip) {
+                  // template
+                  template = ""
+                  template = ` `
+               } 
+               document.querySelector("#js-post").innerHTML = template
+            }
+            jsTag.addEventListener("click", printJs, false);
+         }
+         
+
+         const printHtml = () => {
+            let htmlTag = document.getElementById("#html-tab");
+            
+            let categoria = tag 
+            function tag(elementArray) {
+               if (elementArray === html) {
+                  // template
+                  template = ""
+                  template = ` `
+               }
+               
+               document.querySelector("#html-post").innerHTML = template
+               
+            }
+         htmlTag.addEventListener("click", printHtml, false);
+         }
+
+         printAll().then((respopnse)=>{
+            console.log(respopnse)
+            return printJs()
+         })
+         .then((response)=>{
+            console.log(response)
+            return printHtml()
+         })
+         .then((response)=>{
+            console.log(response)
+         })
+         .catch((error)=> {
+            console.log(error)
+         })
+
+         ////////////// try lore :P
+          
+              
+         //creación de template
          if (contador === 1){
-
             template += `
             <!--Start card-->
             <div class="card card-body"> 
@@ -114,11 +185,11 @@ fetch("https://devto-9a074-default-rtdb.firebaseio.com/post/.json")
                                  <div>
                                  <button class="card__nobg-button"><img src="/images/main/heart-icon.svg" alt=""> 21 reactions</button>
                                  <button class="card__nobg-button"><img src="/images/main/coments icon.svg" alt=""> 74 comments</button>
-                               </div>
-                               <div>
+                              </div>
+                              <div>
                                  <button class="card__nobg-button card__read-button"> ${minToRead} min read</button>
                                  <a href="update.html?id${onePost}" class="card__save-button">Edit</a>
-                               </div>
+                              </div>
                               </div>
                            </div>
                         </div>
@@ -129,13 +200,9 @@ fetch("https://devto-9a074-default-rtdb.firebaseio.com/post/.json")
          </div> 
             <!--end card-->
             ` 
-
-         }
-
-
-       
-        
-        document.getElementById("relevant").innerHTML = template
+         }      
+         // seleccionar e ingresar template layout
+         document.getElementById("all-post").innerHTML = template
         
     }
     
@@ -143,3 +210,10 @@ fetch("https://devto-9a074-default-rtdb.firebaseio.com/post/.json")
 .catch (err =>{
     console.log(err)
 })
+
+
+
+
+
+
+
