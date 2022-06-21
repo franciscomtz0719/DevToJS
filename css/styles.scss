@@ -535,7 +535,6 @@ a{
       font-weight: $fw-heavy;
     }
     }
-    
   }
 
   &__toolbar{ 
@@ -570,24 +569,6 @@ a{
 
 }
 
-/*iconos*/
-.btn-icons { width:100%;
-  background-color: #f0F0F0;
-   button{
-   border:none; 
-   
-   background-color:none;
-  & :hover{
-    background-color:$cyan;
-    color:  rgb(47, 58,178);
-  }} & i{
-    display: inline-block;
-    align-self: center;
-    width: 2rem;
-    height: 2rem;
-     background-color: none;
-     align-items: center;
-  } }
   .form-content__title{
     border: none;
   }

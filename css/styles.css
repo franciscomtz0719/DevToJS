@@ -609,35 +609,6 @@ a {
   margin-left: 0;
 }
 
-/*iconos*/
-.btn-icons {
-  width: 100%;
-  background-color: #f0F0F0;
-}
-
-.btn-icons button {
-  border: none;
-  background-color: none;
-}
-
-.btn-icons button :hover {
-  background-color: #D0ECFF;
-  color: #2f3ab2;
-}
-
-.btn-icons i {
-  display: inline-block;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  width: 2rem;
-  height: 2rem;
-  background-color: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .form-content__title {
   border: none;
 }
