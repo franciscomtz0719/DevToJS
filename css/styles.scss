@@ -481,7 +481,78 @@ a{
 } 
 
 /*footer*/
+.editor-toolbar{
+  position: relative !important;
+  display: flex;
+}
+
 .dev-footer{
   background: $dev-gray;
   font-size: $s;  
+}
+
+
+
+//form
+.form-content__alert{
+  background: rgba(220,38,38, 0.1);
+  margin-bottom: 1.5rem !important;
+  border-radius:0.358rem;
+  padding: 1rem;
+  h3{
+    color:maroon;
+  }
+}
+
+.post-form{
+  max-width:  var(--site-width);
+  height: 100vh;
+  display: grid;
+  padding: 0 var(--layout-padding);
+  gap: 0 var(--layout-gap);
+  margin: auto 0;
+  grid-template-rows:  min-content 1fr min-content;
+  
+  &__body{
+    background: white;
+    &--content{
+      padding: 2rem;
+    }
+  }
+
+  &__input{
+    border:0;
+    display: block;
+  }
+
+  &__toolbar{ 
+    position: sticky;
+    top:0;
+    background: #f9f9f9;
+    padding-right: 4rem, 0;
+    overflow-x:auto;
+
+  }
+  &__header{
+    display:flex;
+    align-items: center;
+    height: 56px;
+    padding: 0 0.5remm;
+  }
+  &__logo{
+    display: block;
+  }
+  &__field-label{
+    color:rgb(23, 23, 23);
+    font-weight: 500;
+  }
+  &__close{
+    
+    position: absolute;
+    right: 0.5rem;
+    top:0.5rem;
+    margin-left: 0;
+
+  }
+
 }
