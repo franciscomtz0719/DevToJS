@@ -17,6 +17,22 @@ fetch(`https://devto-9a074-default-rtdb.firebaseio.com/post/${idPost}.json`)
 
     
     let {author, avatarAuthor, content, createdDate, minToRead, tags, title, urlCoverImage} = response
+
+    let arrTags = tags.split('#')
+    console.log(arrTags)
+
+    function cleanArray(actual) {
+       let newArray = new Array();
+       for (var i = 0; i < actual.length; i++) {
+          if (actual[i]) {
+             newArray.push(actual[i])
+          }
+       }
+       return newArray
+    }
+     
+    let cleanTagArr= cleanArray(arrTags)
+    console.log(cleanTagArr)
     
     let template = 
     `
@@ -34,7 +50,7 @@ fetch(`https://devto-9a074-default-rtdb.firebaseio.com/post/${idPost}.json`)
                 <div class="card__username-container d-flex">
 <!-- User image profile -->
                     <img
-                    src="
+                    src="${avatarAuthor}
                     
                     "
                     alt="image user profile"
@@ -54,10 +70,10 @@ fetch(`https://devto-9a074-default-rtdb.firebaseio.com/post/${idPost}.json`)
               <h3 class="card__tittle card__post-tittle"> ${title}
 <!-- cart title content -->
               </h3>
-              <button class="card__tags m-2">#Discuss</button
-              ><button class="card__tags m-2">#help</button
-              ><button class="card__tags m-2">#ubuntu</button
-              ><button class="card__tags m-2">#linux</button>
+              <button class="card__tags m-2">${cleanTagArr[0] === undefined ? '' : '#' + cleanTagArr[0]}</button
+              ><button class="card__tags m-2">${cleanTagArr[1] === undefined ? '' : '#' + cleanTagArr[1]}</button
+              ><button class="card__tags m-2">${cleanTagArr[2] === undefined ? '' : '#' + cleanTagArr[2]}</button
+              ><button class="card__tags m-2">${cleanTagArr[3] === undefined ? '' : '#' + cleanTagArr[3]}</button>
               <p class="card__post-body">${content}
 <!-- Card body content -->
               </p>
@@ -112,15 +128,16 @@ fetch(`https://devto-9a074-default-rtdb.firebaseio.com/post/${idPost}.json`)
 
                 </div>
                 <div class="d-flex mt-2 pt-1 ms-5 ps-2">
-                  <button type="button" class="btn btn-primary btn-sm card__btn-submit">
-                    Submit
-                  </button>
-                  <button
+                  <a href="/update.html?id${idPost}" type="button" class="btn btn-primary btn-sm card__btn-submit">
+                    Update
+                  </a>
+                  <a
                     type="button"
                     class="btn btn-outline-primary btn-sm"
+                    href="/index.html"
                   >
-                    Preview
-                  </button>
+                    Return to posts
+                  </a>
                 </div>
                 <div
                   class="card__footer-conduct d-flex justify-content-center"

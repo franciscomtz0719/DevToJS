@@ -1,19 +1,4 @@
-
-
-/**
- * let post = {
-    title: 'titulo del post',
-    content: 'contenido del post ....',
-    tags: 'lorem, lorem, lorem',
-    urlCoverImage: 'https://res.cloudinary.com/practicaldev/image/fetch/s--f9PeJcAd--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/52ohyn4pzhpehxxq2s55.jpg',
-    author: 'Cris',
-    createdDate: '2022-06-16',
-    mintoread: 3,
-    avatarAuthor: 'https://res.cloudinary.com/practicaldev/image/fetch/s--3xRt7osW--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/395121/4dd73e99-88c7-4886-b485-cd246beaaf92.jpg'
-}
-*/
-
-let idPost = window.location.search.substring(10)
+let idPost = window.location.search.substring(3)
 console.log (idPost)
 
 //TODO: trial object with full structure to update
@@ -30,6 +15,7 @@ fetch(`https://devto-9a074-default-rtdb.firebaseio.com/post/${idPost}.json`)
 })
 .then ((response) => {
 //! validate if the response is not an empty object
+console.log(response)
 
 if (!response){
     alert('Error: Tienes campos vacíos por llenar')
@@ -46,13 +32,13 @@ if (!response){
         avatarAuthor
     } = response  
 
-    document.getElementById('form__update-title').value = title
-    document.getElementById('form__update-content').value = content
-    document.getElementById('form__update-tags').value = tags
-    document.getElementById('form__update-urlCoverImage').value = urlCoverImage
-    document.getElementById('form__update-author').value = author
-    document.getElementById('form__update-mintoRead').value = minToRead
-    document.getElementById('form__update-avatar-author').value = avatarAuthor 
+    document.getElementById('form-content__title').value = title
+    document.getElementById('form-content__content').value = content
+    document.getElementById('form-content__tags').value = tags
+    document.getElementById('form-content__url').value = urlCoverImage
+    document.getElementById('form-content__author').value = author
+    document.getElementById('form-content__min').value = minToRead 
+    document.getElementById('form-content__avatarAuthor').value = avatarAuthor  
 
     }
 }).catch(err => {
@@ -65,13 +51,13 @@ btnUpdate.addEventListener('click', () => {
     let today = new Date();
     let createdDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()   
 
-    title = document.getElementById('form__update-title').value
-    content = document.getElementById('form__update-content').value
-    tags = document.getElementById('form__update-tags').value 
-    urlCoverImage = document.getElementById('form__update-urlCoverImage').value 
-    author = document.getElementById('form__update-author').value 
-    minToRead = document.getElementById('form__update-mintoRead').value 
-    avatarAuthor = document.getElementById('form__update-avatar-author').value  
+    title = document.getElementById('form-content__title').value
+    content = document.getElementById('form-content__content').value
+    tags = document.getElementById('form-content__tags').value 
+    urlCoverImage = document.getElementById('form-content__url').value 
+    author = document.getElementById('form-content__author').value 
+    minToRead = document.getElementById('form-content__min').value 
+    avatarAuthor = document.getElementById('form-content__avatarAuthor').value  
 
     if(
         title === '' ||
@@ -107,12 +93,12 @@ btnUpdate.addEventListener('click', () => {
         }) 
         .then((response) => {
             alert(`El post ${response.title} con el id ${idPost} ha sido actualizado`)
+            console.log(response)
         }).catch((error) => {
             alert(`No fue posible actualiziar el post ${error}`)
         })
     }
 })
-git 
 let btnDelete = document.getElementById('deletePost')
 btnDelete.addEventListener('click', () => {
 
@@ -131,9 +117,10 @@ btnDelete.addEventListener('click', () => {
     }
     })
     .then((response) => {
-        console.log(response) 
-        winndow.location.pathname = '/index.html'
+        window.location.pathname ='/index.html'
     }).catch( err => {
         console.log(err)
+        errConection = document.querySelector('.form-content__alert')
+        errConection.classList.remove('d-none')
     })
 })
