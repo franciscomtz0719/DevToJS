@@ -498,9 +498,15 @@ a{
   background: rgba(220,38,38, 0.1);
   margin-bottom: 1.5rem !important;
   border-radius:0.358rem;
-  padding: 1rem;
+  padding: 1rem ;
+  padding-bottom: .25rem;
   h3{
+    font-size: $xl;
     color:maroon;
+  }
+  &--err{
+    font-size: $s;
+    
   }
 }
 
@@ -520,9 +526,17 @@ a{
     }
   }
 
-  &__input{
+  &__in{
     border:0;
     display: block;
+    &--title{
+      &::placeholder{
+      font-size: $xl;
+      font-weight: $fw-heavy;
+      
+    }
+    }
+    
   }
 
   &__toolbar{ 
