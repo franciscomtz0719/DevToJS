@@ -10,6 +10,7 @@ bntPost.addEventListener('click', () => {
     author = document.getElementById('form-content__author').value 
     minToRead = document.getElementById('form-content__min').value 
     avatarAuthor = document.getElementById('form-content__avatarAuthor').value  
+    category = document.getElementById('form-content__category').value  
     
     let today = new Date();
     let createdDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()   
@@ -22,6 +23,7 @@ bntPost.addEventListener('click', () => {
         author === '' ||
         createdDate === '' ||
         minToRead === ''||
+        category === ''||
         avatarAuthor === ''
         ){
             alert('Please fill all fields are required ')
@@ -34,7 +36,8 @@ bntPost.addEventListener('click', () => {
                 author: author,
                 createdDate: createdDate,
                 minToRead: minToRead,
-                avatarAuthor: avatarAuthor    
+                avatarAuthor: avatarAuthor,
+                category:category
             }
 
     fetch( 'https://devto-9a074-default-rtdb.firebaseio.com/post/.json', {
