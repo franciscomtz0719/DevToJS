@@ -18,6 +18,19 @@ body {
   font-weight: 500;
 }
 
+.header-default {
+  padding-top: 56px;
+  min-height: calc(100vh - 56px);
+}
+
+.radius-full {
+  border-radius: 9999px !important;
+}
+
+.fm-medium {
+  font-weight: 500;
+}
+
 a {
   text-decoration: none;
   color: rgb(59, 73, 223);
@@ -36,6 +49,30 @@ a {
   width: 2rem;
   height: 2rem;
 }
+.dev-avatar__image {
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.dev-avatar {
+  display: inline-block;
+  border-radius: 100%;
+  position: relative;
+  background-color: #525252;
+  overflow: hidden;
+  vertical-align: middle;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.dev-avatar__l {
+  width: 2rem;
+  height: 2rem;
+}
+
 .dev-avatar__image {
   border-radius: 100%;
   width: 100%;
@@ -405,6 +442,13 @@ a {
 }
 
 /*footer*/
+.editor-toolbar {
+  position: relative !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .dev-footer {
   background: rgb(229, 229, 229);
   font-size: 0.875rem;

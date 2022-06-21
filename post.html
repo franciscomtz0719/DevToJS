@@ -1,332 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEV Community 👩‍💻👨‍💻</title>
-    <link rel="icon" type="image/x-icon"
-        href="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="style-icon.css">
-</head>
-
-<body class="bg-light header-default">
-    <!--start header-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/listStyles.css" />
+    <title>Document</title>
+  </head>
+  <body>
     <header>
-        <!--Nav bar container start-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid justify-content-between">
-            <div class="navbar__left-side d-inline-flex">
-              <div class="navbar__left-section">
-                <button
-                  class="navbar-toggler"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarNav"
-                  aria-controls="navbarNav"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
-                >
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <span
-                  ><a href="#"
-                    ><img
-                      class="navbar__logo"
-                      src="../images/header-nav-bar/devto-logo.svg"
-                      alt="" 
-                      width="60px"/></a
-                ></span>
-              </div>
-              <form class="d-flex ms-3 border">
-                <input
-                  class="form-control m-0 border-0 navbar__search-bar d-none d-lg-block"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <!-- tamaño de barra de busqueda -->
-                <button class="btn m-0 justify-content-sm-end" type="submit">
-                  <img src="./images/header-nav-bar/search-icon.svg" alt="" />
-                </button>
-              </form>
+      <!--Nav bar container start-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid justify-content-between">
+          <div class="navbar__left-side d-inline-flex">
+            <div class="navbar__left-section">
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <span
+                ><a href="#"
+                  ><img
+                    class="navbar__logo"
+                    src="../images/header-nav-bar/devto-logo.svg"
+                    alt="" /></a
+              ></span>
             </div>
-  
-            <div class="navbar__right-side d-inline-flex align-items-center m-4">
-              <a href="/new.html" class="navbar__button d-none d-lg-flex">Create Post</a>
-              <div class="d-inline-flex position-relative">
-                <span
-                  class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"
-                ></span>
-                <img
-                  class="rounded-4 shadow-4 navbar__notification-icon"
-                  src="../images/header-nav-bar/notification-icon.svg"
-                  alt="Avatar"
-                />
+            <form class="d-flex ms-3 border">
+              <input
+                class="form-control m-0 border-0 navbar__search-bar d-none d-lg-block"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <!-- tamaño de barra de busqueda -->
+              <button class="btn m-0 justify-content-sm-end" type="submit">
+                <img src="./images/header-nav-bar/search-icon.svg" alt="" />
+              </button>
+            </form>
+          </div>
+
+          <div class="navbar__right-side d-inline-flex align-items-center m-4">
+            <a href="/new.html" class="navbar__button d-none d-lg-flex">Create Post</a>
+            <div class="d-inline-flex position-relative">
+              <span
+                class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"
+              ></span>
+              <img
+                class="rounded-4 shadow-4 navbar__notification-icon"
+                src="../images/header-nav-bar/notification-icon.svg"
+                alt="Avatar"
+              />
+            </div>
+            <a href=""
+              ><img
+                src="../images/discuss-view/user-profile-picture.webp"
+                class="rounded-circle navbar__profile-avatar"
+                alt="perfil"
+                width="40px"
+            /></a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!--Nav bar container end-->
+
+    <main>
+      <div
+        class="left-aside-discuss col-lg-1 flex-lg-column d-none d-lg-flex position-fixed ms-1"
+      >
+        <!--left aside start-->
+        <div class="left-aside__icon-container">
+          <img
+            src="../images/main/heart-icon.svg"
+            alt=""
+            type="button"
+            class="btn btn-secondary dropdown-toggle bg-light border-0 m-3"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          />
+        </div>
+        <div class="left-aside__icon-container">
+          <img
+            src="../images/main/unicorn-icon.svg"
+            alt=""
+            type="button"
+            class="btn btn-secondary dropdown-toggle bg-light border-0 m-3"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          />
+        </div>
+        <div class="left-aside__icon-container">
+          <img
+            src="../images/main/save-icon.svg"
+            alt=""
+            type="button"
+            class="btn btn-secondary dropdown-toggle bg-light border-0 m-3"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          />
+        </div>
+        <div class="left-aside__icon-container">
+          <div class="btn-group dropend">
+            <img
+              src="../images/main/more-3dots-icon.svg"
+              alt=""
+              type="button"
+              class="btn btn-secondary dropdown-toggle bg-light border-0 m-3"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            />
+            <ul class="dropdown-menu d-flex-column">
+              <button class="d-flex justify-content-between w-100">
+                <li>Copy link</li>
+                <img src="../images/main/copylink-icon.svg" alt="" />
+              </button>
+              <button>Share to twitter</button>
+              <button>Share to Linkedin</button>
+              <button>Share to Reddit</button>
+              <button>Share to Hacker News</button>
+              <button>Share to Facebook</button>
+              <button>Share Post via</button>
+              <button>Report Abuse</button>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--left aside end-->
+
+      <!--main starts-->
+      <div class="container position-relative">
+        <div class="row ms-1">
+          <div id="main__container" class="main post__container col-12 col-lg-8">
+            
+
+            <div class="card">
+                <div class="card-header">
+                  Read next
+                </div>
+                <div class="card-body">
+                    <div class="card__username-container d-flex my-3">
+                        <img
+                        src="/images/discuss-view/Ben-halpern-profile.webp"
+                        alt="image user profile"
+                        height="50px"
+                        style="border-radius: 360px"
+                      />
+                      <div class="card__username-container ms-3">
+                          <a href="">
+                            <h6 class="card__profile-name m-0">Describe the wors job interview you've ever taken part in</h6>
+                            <p class="card__date m-0">Ben Halpen - Apr 28</p>
+                          </a>
+                      </div>
+                    </div>
+                    <div class="card__username-container d-flex my-3">
+                        <img
+                        src="/images/discuss-view/shahed-nasser-profile.webp"
+                        alt="image user profile"
+                        height="50px"
+                        style="border-radius: 360px"
+                      />
+                      <div class="card__username-container ms-3">
+                        <a href="">
+                            <h6 class="card__profile-name m-0">What's the most recent project you've been working on?</h6>
+                            <p class="card__date m-0">Shahed Nasser - Apr 25</p>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="card__username-container d-flex my-3">
+                        <img
+                        src="/images/discuss-view/tina-huynh-profile.webp"
+                        alt="image user profile"
+                        height="50px"
+                        style="border-radius: 360px"
+                      />
+                      <div class="card__username-container ms-3">
+                          <a href="">
+                            <h6 class="card__profile-name m-0">What does your dream work setup looks like</h6>
+                            <p class="card__date m-0">Tina Huynh - Apr 28</p>
+                          </a>
+
+                      </div>
+                    </div>
+                    <div class="card__username-container d-flex my-3">
+                        <img
+                        src="/images/discuss-view/joelbonet-profile.webp"
+                        alt="image user profile"
+                        height="50px"
+                        style="border-radius: 360px"
+                      />
+                      <div class="card__username-container ms-3">
+                          <a href="">
+                            <h6 class="card__profile-name m-0">to TS or not to TS, ths is NOT the question. is it?</h6>
+                            <p class="card__date m-0">JoelBonetR - Apr 26</p>
+                          </a>
+                      </div>
+                    </div>
+                </div>
               </div>
-              <a href=""
-                ><img
-                  src="../images/discuss-view/user-profile-picture.webp"
-                  class="rounded-circle navbar__profile-avatar"
-                  alt="perfil"
-                  width="40px"
-              /></a>
+
+
+          </div>
+          <!--main ends-->
+
+          <div class="right-aside col-sm-12 col-lg-4">
+            <!--right aside aside start-->
+
+            <div class="card card-aside1">
+              <div class="card__portrait-container bg-dark">
+                <p>Desarrollado con presión</p>
+              </div>
+
+              <div class="card__profile-container d-flex align-items-end m-0">
+                <img
+                  src="/images/discuss-view/lifeascoder-profile.webp"
+                  alt="image user profile"
+                  height="50px"
+                  style="border-radius: 360px"
+                />
+                <div class="card__username-container m-0">
+                  <h6 class="card__profile-name m-0">lifeascoder</h6>
+                </div>
+              </div>
+              <div
+                class="card__button-container m-3 d-flex justify-content-center"
+              >
+                <button type="button" class="btn btn-primary btn-sm w-100 m-1">
+                  Follow
+                </button>
+              </div>
+              <div class="card-body">
+                <p>
+                  I am working on Portfolio websites and learning to make
+                  stunning websites also.
+                </p>
+
+                <div class="card__text-subdivition">
+                  <p class="card__bold-text m-0">LOCATION</p>
+                  <p class="card__regular-text">Kerala, India</p>
+                </div>
+                <div class="card__text-subdivition">
+                  <p class="card__bold-text m-0">EDUCATION</p>
+                  <p class="card__regular-text">Amrita Vidyalayam, Ottapalam</p>
+                </div>
+                <div class="card__text-subdivition">
+                  <p class="card__bold-text m-0">JOINED</p>
+                  <p class="card__regular-text">Jan 27, 2022</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card card-aside2">
+              <img
+                src="./images/collapsible-menu/rightaside2.webp"
+                class="card-img-top"
+                alt=""
+              />
+              <div class="card-body">
+                <h4 class="card-title">Appwrite Hackathon (39)</h4>
+                <a href="">Watery: A water delivery Database</a>
+                <a href="">Import Csv to Appwrite Database</a>
+                <a href="">Day 3: Still UI/bottom navigation bar (custom)</a>
+                <a href="">News Archiver</a>
+                <div class="d-flex-column justify-content-center">
+                  <a href="#" class="btn btn-primary my-1 w-100"
+                    >Submit Your Project!</a
+                  >
+                  <a href="#" class="btn btn-primary my-3 w-100"
+                    >See all posts</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
-        </nav>
-      </header>
-      <!--Nav bar container end-->
-    <!--end header-->
-    <!--start wrapper-->
-    <div class="wrapper container">
-        <div class="row">
-            <!--start main-->
-            <main class="container col-12 col-md-8 p-0 ">
-                <div class="row">
-                    <!--start icons left aside main-->
-                    <div class="col-1 ">
-                        <!--left aside start-->
-                        <div class="left-aside__icon-container">
-                            <img
-                            src="../images/main/heart-icon.svg"
-                            alt=""
-                            type="button"
-                            class="btn btn-secondary dropdown-toggle bg-light border-0 m-3"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                            />
-                        </div>
-                        <div class="left-aside__icon-container">
-                            <img
-                            src="../images/main/unicorn-icon.svg"
-                            alt=""
-                            type="button"
-                            class="btn btn-secondary dropdown-toggle bg-light border-0 m-3"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                            />
-                        </div>
-                        <div class="left-aside__icon-container">
-                            <img
-                            src="../images/main/save-icon.svg"
-                            alt=""
-                            type="button"
-                            class="btn btn-secondary dropdown-toggle bg-light border-0 m-3"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                            />
-                        </div>
-                        <div class="left-aside__icon-container">
-                            <div class="btn-group dropend">
-                            <img
-                                src="../images/main/more-3dots-icon.svg"
-                                alt=""
-                                type="button"
-                                class="btn btn-secondary dropdown-toggle bg-light border-0 m-3"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            />
-                            <ul class="dropdown-menu d-flex-column">
-                                <button class="d-flex justify-content-between w-100">
-                                <li>Copy link</li>
-                                <img src="../images/main/copylink-icon.svg" alt="" />
-                                </button>
-                                <button>Share to twitter</button>
-                                <button>Share to Linkedin</button>
-                                <button>Share to Reddit</button>
-                                <button>Share to Hacker News</button>
-                                <button>Share to Facebook</button>
-                                <button>Share Post via</button>
-                                <button>Report Abuse</button>
-                            </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end icons left aside main-->
-                    <!--start post-->
-                    <div class="col-sm-12 col-11">
-                        
-                        <div class="dev-main my-3">
-                            <!-- start post -->
-                                <article class="devpost-story cursor-pointer devpost-story--featured ">
-                                    <!-- article cover -->
-                                    <div class="devpost-article__cover devpost-story__cover__image__feed">
-                                        
-                                    </div>
-                                    <div class="devpost-story__body">
-                            <!-- article top  -->
-                                    <div class="devpost-story__top">
-                                        <div class="devpost-story__meta">
-                                            <div class="devpost-story__author-pic">
-                                                <a href="" class="devpost-avatar">
-                                                    <img src="${avatarAuthor}" alt="" class="devpost-avatar__image">
-                                                </a>
-                                                
-                                            </div>
-                                            <div>
-                                                <div><button class="devpost-story__secundary fw-medium m:hidden" href="">${author}</button></div>
-                                                <div>${createdDate}</div>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    <!-- article detail -->
-                                    <div class="devpost-story__detail">
-                                        
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- end post -->
-                            <!--start commets post-->
-                            <div class="dev-main__commets-post">
-                                <div class="dev-main__commets-header">
-                                        <h2 class="title__second">Discussion (2)</h2>
-                                        <button>Subscribe</button>
-                                </div>
+          <!--right aside end-->
+        </div>
+      </div>
 
-                            </div>
-                             <!--end commets post-->                            
-                        </div>
-                        <!--start read next-->
-                    <div class="container dev-main__card-secondary">
-                        <h2 class="title__second">Read Next</h2>
-                        <div class="container__body">
-                            <div class="card-read d-flex flex-content align-items-center">
-                                <div class="flex-item flex-grow-0">
-                                    <img class="rounded-circle overflow-hidden me-3"
-                                    src="images/igor.png" alt="">
-                                </div>
-                                <div class="card-read__texto flex-item flex-grow-1">
-                                    <a class="m-0 dev-link__on" href="#">
-                                        <h3 class="m-0 fs__l">
-                                        How to Load Test Your Apps For Free By Going Serverless
-                                        </h3>
-                                         <p><a class="m-0 dev-link__on" href="#">Igor Helton - Apr 27</a></p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-read d-flex flex-item flex-content align-items-center">
-                                <div class="flex-item flex-grow-0">
-                                    <img class="rounded-circle overflow-hidden me-3" src="images/josue.png" alt="">
-                                </div>
-                                <div class="flex-item flex-grow-1 card-read__texto">
-                                      <a class="m-0 dev-link__on"  href="#"><h3 class="m-0 fs__l">
-                                      5 not well known Programming Language that are worth exploring
-                                   </h3>
-                                    <p>Josue Tiu</p></a>
-                                </div>
-                            </div>
-                            <div class="card-read d-flex flex-content align-items-center">
-                                <div class="flex-item flex-grow-0">
-                                    <img class="rounded-circle overflow-hidden me-3" src="images/ninetailed.png" alt="">
-                                </div>
-                                <div
-                                class="card-read__texto flex-item flex-grow-1">
-                                    <a class="dev-link__on" href="#">
-                                        <h3 class="m-0 fs__l">
-                                        Nevertheless, Don't quit coding:cara_de_unicornio:- my advice to you :corazón_refulgente:
-                                        </h3>
-                                    <p>The Coding Mermaid :sirena: - Mar 8</p>
-                                </a>
-                                </div>
-                            </div>
-                            <div class="card-read d-flex flex-content align-items-center">
-                                <div class="flex-item flex-grow-0">
-                                    <img class="rounded-circle overflow-hidden me-3" src="images/zoran.png" alt="">
-                                </div>
-                                <div class="card-read__texto flex-item flex-grow-1">
-                                    <a class="dev-link__on title-article" href="#">
-                                        <h3 class="m-0 fs__l">
-                                        The cost of OKE for YugabyteDB - 1 Create the cluster
-                                        </h3>
-                                    <p>Brian cor</p>
-                                </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end read next-->                        
-                    </div>
-                    <!--end post-->
-                    
-                </div>
-            </main>
-            <!--end main-->
-            <!-- star aside follow -->
-            <aside class=" aside-follow col-4 d-none d-md-block py-3 aside-follow container">
-                <div>
-                <header class=" header-follow bg-secondary rounded-top">
-                    <span class="img_avatar">
-                        <img class="rounded-circle overflow-hidden me-3" src="images/usuario.png" alt="">
-                    </span>
-                    <strong>
-                    <a class="name_avatar dev-link__on" href="#">Tyler Hawkins</a>
-                </strong>
-                <button class="btn btn-primary
-                btn-lg">Follow</button>
-                </header>
-            </div>
-        <div class="aside-follow__location dev-main__card-secondary">
-            <div>
-                Senior software engineer. Continuous learner. Educator. http://tylerhawkins.info
-            </div>
-         <div>
-                <ul>
-                    <li mx-0>
-                        <div>LOCATION</div>
-                        <div>Orem, UT</div>
-                    </li>
-                    <li>
-                        <div>WORK</div>
-                        <div>Senior Software Engineer at Adobe</div>
-                    </li>
-                    <li>
-                        <div>JOINED</div>
-                        <div>2 mar 2020</div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="more-from mt-2 dev-main__card-secondary">
-            <h3> More from <a href="#">Tyler Hawkins</a></h3>
-            <div class="card-read__texto mb-3 mt-3" >
-                <a class="dev-icon__on" href="#">How to Create a Java Project with Maven</a>
-                <div class="d-flex d-inline-block">
-                <span class="fs__xs mx-1 text-muted">#java</span>
-                <span class="fs__xs mx-1 text-muted">#tutorial</span>
-                <span class="fs__xs mx-1 text-muted">#beginners</span>
-                <span class="fs__xs mx-1 text-muted">#tooling</span>
-                </div>
-            </div>
-            <div class="card-read__texto mb-3 mt-3">
-                <a class="dev-icon__on" href="#">Automated Accessibility Testing</a>
-                <div class="d-flex">
-                <span class="fs__xs mx-1 text-muted">#java</span>
-                <span class="fs__xs mx-1  text-muted">#react</span>
-                <span class="fs__xs mx-1 text-muted">#a11</span>
-                <span class="fs__xs mx-1 text-muted">#testing</span>
-            </div>
-            </div>
-            <div class="card-read__texto mb-1mt-3">
-                <a class="dev-icon__on" href="#">What Every Good README Should</a>
-            <div class="d-flex my-0">
-                <span class="fs__xs mx-1  text-muted">#programming</span>
-                <span class="fs__xs mx-1 text-muted">#javascript</span>
-                <span class="fs__xs mx-1 text-muted">#webdev</span>
-                <span class="fs__xs mx-1 text-muted">#productivity</span>
-            </div>
-            </div>
-        </div>
-    <!-- </div> -->
-            </aside>
-              <!-- end aside follow -->
-        </div>
-    </div>
-    <!--end wrapper-->
-    <!--start footer-->
+       <!--start footer-->
     <footer class="dev-footer">
         <div class="container center p-3">
             <div class="row align-items-center fs-s p-3">
@@ -356,8 +326,14 @@
                 </svg></a>
         </div>
     </footer>
-    <!--end footer-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
     <script src="/js/post.js"></script>
-</body>
+
+  </body>
 </html>
