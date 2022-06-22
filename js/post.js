@@ -23,7 +23,7 @@ fetch(`https://devto-9a074-default-rtdb.firebaseio.com/post/${idPost}.json`)
 
     function cleanArray(actual) {
        let newArray = new Array();
-       for (var i = 0; i < actual.length; i++) {
+       for (let i = 0; i < actual.length; i++) {
           if (actual[i]) {
              newArray.push(actual[i])
           }
