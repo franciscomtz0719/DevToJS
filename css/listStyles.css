@@ -250,4 +250,18 @@ textarea.form-control {
     font-size: 1rem;
   }
 }
+
+/*footer*/
+.editor-toolbar {
+  position: relative !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dev-footer {
+  background: #e5e5e5;
+  font-size: 0.875rem;
+}
 /*# sourceMappingURL=styles.css.map */
+
