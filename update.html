@@ -76,22 +76,45 @@
                                 <div class="post-form__body--content">
                                     
                                     
-                                    <input id="form-content__author" placeholder="Name author" class="post-form__in form-content__author" type="text">
-                                    
-                                    <input id="form-content__avatarAuthor" placeholder="Url Avatar Author" class=" post-form__in form-content__avatarAuthor"
-                                        type="text">
-                                    
-                                    <input id="form-content__min" placeholder="Min to read ..." class="post-form__in form-content__min" type="text">
-                                    
-                                    <input id="form-content__url" placeholder="Url Image Cover" class="post-form__in form-content__url" type="text">
+                                    <div class="form-floating mb-3">
 
-                                    <input type="text" id="form-content__tags" class="form-control post-form__in" placeholder="Add tags"
-                                                aria-label="javascript" aria-describedby="button-addon2">
-                                    
-                                    <input id="form-content__title" placeholder="New post Title here..." type="text" class="post-form__in--title form-content__title">
+                                        <input type="text" class="form-control post-form__in form-content__author" id="form-content__author" placeholder="">
+                                        <label for="floatingInput">Name author</label>
+
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+
+                                        <input type="text" class="form-control post-form__in form-content__avatarAuthor" id="form-content__avatarAuthor" placeholder="">
+                                        <label for="form-content__avatarAuthor">Url Avatar Author</label>
+
+                                    </div>
+                                    <div class="form-floating mb-3">
+
+                                        <input type="text" class="form-control post-form__in form-content__min" id="form-content__min" placeholder="">
+                                        <label for="form-content__min">Min to read</label>
+
+                                    </div>
+                                    <div class="form-floating mb-3">
+
+                                        <input type="text" class="form-control post-form__in form-content__url" id="form-content__url" placeholder="">
+                                        <label for="form-content__url">Url Image Cover</label>
+
+                                    </div>
+                                    <div class="form-floating mb-3">
+
+                                        <input type="text" class="form-control post-form__in form-content__url" id="form-content__tags" placeholder="" aria-label="javascript" aria-describedby="button-addon2">
+                                        <label for="form-content__tags">Add tags</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+
+                                        <input type="text" class="form-control post-form__in--title form-content__title" id="form-content__title" placeholder="">
+                                        <label for="form-content__title">Title here...</label>
+                                    </div>
 
                                 </div>
-                                <div class="post-form__toolbar ">
+                                <div class="post-form__toolbar d-flex justify-content-center ">
                                     <div class="form-contet__edit editor-toolbar relative ">
                                         <button class="form-contet__edit--bold dev-link"><svg class="crayons-icon"
                                                 width="24" height="24" viewBox="0 0 24 24"
@@ -288,7 +311,12 @@
                         </div>
 
                     </div>
+
+
+                    
                     <!-- end form-aside -->
+
+
                 </div>
                 <!-- star form-footer -->
                 <div class="form-footer col-12">

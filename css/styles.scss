@@ -533,10 +533,8 @@ a{
       &::placeholder{
       font-size: $xl;
       font-weight: $fw-heavy;
-      
     }
     }
-    
   }
 
   &__toolbar{ 
@@ -570,3 +568,7 @@ a{
   }
 
 }
+
+  .form-content__title{
+    border: none;
+  }

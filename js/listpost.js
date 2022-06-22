@@ -29,7 +29,7 @@ fetch("https://devto-9a074-default-rtdb.firebaseio.com/post/.json")
 
          function cleanArray(actual) {
             let newArray = new Array();
-            for (var i = 0; i < actual.length; i++) {
+            for (let i = 0; i < actual.length; i++) {
                if (actual[i]) {
                   newArray.push(actual[i])
                }
@@ -49,7 +49,7 @@ fetch("https://devto-9a074-default-rtdb.firebaseio.com/post/.json")
                <div class="row">
                   <div class="col-12 col-lg-12">
                      <div class="cover-container">
-                        <img class="cover-container__image" src="${urlCoverImage}" alt="">
+                     <a href="/post.html?id${onePost}"><img class="cover-container__image" src="${urlCoverImage}" alt=""></a>  
                      </div>
                      <div class="d-inline-flex">
                         <img src="${avatarAuthor}" alt="image user profile" height="50px"
@@ -74,7 +74,7 @@ fetch("https://devto-9a074-default-rtdb.firebaseio.com/post/.json")
                               </div>
                               <div>
                                  <button class="card__nobg-button card__read-button"> ${minToRead} min read</button>
-                                 <a href="update.html?id${onePost}" class="card__save-button" >Edit</a>
+                                 <a type="button" href="update.html?id${onePost}" class="card__save-button text-center me-0" >Edit</a>
                               </div>
                               </div>
                            </div>
@@ -117,7 +117,7 @@ fetch("https://devto-9a074-default-rtdb.firebaseio.com/post/.json")
                                </div>
                                <div>
                                  <button class="card__nobg-button card__read-button"> ${minToRead} min read</button>
-                                 <a href="update.html?id${onePost}" class="card__save-button">Edit</a>
+                                 <a type="button" href="update.html?id${onePost}" class="card__save-button text-center me-0">Edit</a>
                                </div>
                               </div>
                            </div>
@@ -132,11 +132,8 @@ fetch("https://devto-9a074-default-rtdb.firebaseio.com/post/.json")
 
          }
 
+      document.getElementById("relevant").innerHTML = template
 
-       
-        
-        document.getElementById("relevant").innerHTML = template
-        
     }
     
 })

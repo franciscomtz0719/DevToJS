@@ -608,4 +608,8 @@ a {
   top: 0.5rem;
   margin-left: 0;
 }
+
+.form-content__title {
+  border: none;
+}
 /*# sourceMappingURL=styles.css.map */
